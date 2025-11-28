@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chacal Studio
+
+A modern web application built with Next.js 16, React 19, and Tailwind CSS 4.
+
+## Tech Stack
+
+| Technology                                | Version | Purpose                         |
+| ----------------------------------------- | ------- | ------------------------------- |
+| [Next.js](https://nextjs.org)             | 16.0.5  | React framework with App Router |
+| [React](https://react.dev)                | 19.2.0  | UI library                      |
+| [TypeScript](https://typescriptlang.org)  | 5.x     | Type safety                     |
+| [Tailwind CSS](https://tailwindcss.com)   | 4.x     | Utility-first CSS               |
+| [ESLint](https://eslint.org)              | 9.x     | Code linting                    |
+| [Prettier](https://prettier.io)           | 3.x     | Code formatting                 |
+| [Husky](https://typicode.github.io/husky) | 9.x     | Git hooks                       |
+
+## Prerequisites
+
+- **Node.js** 18.17 or later
+- **pnpm** 8.x or later (recommended package manager)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd chacal-studio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This will also set up Husky Git hooks automatically via the `prepare` script.
+
+### 3. Run the Development Server
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+The page auto-updates as you edit files in the `app/` directory.
+
+## Available Scripts
+
+| Command             | Description                                    |
+| ------------------- | ---------------------------------------------- |
+| `pnpm dev`          | Start development server with hot reload       |
+| `pnpm build`        | Create optimized production build              |
+| `pnpm start`        | Start production server (requires build first) |
+| `pnpm lint`         | Run ESLint to check for code issues            |
+| `pnpm lint:fix`     | Run ESLint and auto-fix issues                 |
+| `pnpm format`       | Format all files with Prettier                 |
+| `pnpm format:check` | Check if files are properly formatted          |
+
+## Code Quality
+
+### Linting
+
+ESLint is configured with Next.js recommended rules and TypeScript support:
+
+```bash
+# Check for linting issues
+pnpm lint
+
+# Auto-fix linting issues
+pnpm lint:fix
+```
+
+### Formatting
+
+Prettier ensures consistent code style across the project:
+
+```bash
+# Format all files
+pnpm format
+
+# Check formatting without modifying files
+pnpm format:check
+```
+
+### Git Hooks
+
+Husky enforces code quality on every commit and push:
+
+| Hook           | Action                    | Purpose                                   |
+| -------------- | ------------------------- | ----------------------------------------- |
+| **pre-commit** | `pnpm lint`               | Ensures code passes linting before commit |
+| **pre-push**   | `pnpm lint && pnpm build` | Validates lint + build before pushing     |
+
+These hooks run automatically — no manual setup required after `pnpm install`.
+
+## Project Structure
+
+```
+chacal-studio/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Home page
+│   ├── globals.css         # Global styles
+│   └── favicon.ico         # Site favicon
+├── public/                 # Static assets
+├── .husky/                 # Git hooks
+│   ├── pre-commit          # Lint on commit
+│   └── pre-push            # Lint + build on push
+├── eslint.config.mjs       # ESLint configuration
+├── prettier.config.mjs     # Prettier configuration
+├── next.config.ts          # Next.js configuration
+├── tailwind.config.ts      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── package.json            # Project dependencies and scripts
+```
+
+## Git Workflow
+
+We use a **Git Flow-inspired** branching model:
+
+| Branch      | Purpose                              |
+| ----------- | ------------------------------------ |
+| `main`      | Production-ready code                |
+| `develop`   | Integration branch for features      |
+| `feature/*` | New features (branch from `develop`) |
+| `bugfix/*`  | Bug fixes (branch from `develop`)    |
+| `hotfix/*`  | Critical fixes (branch from `main`)  |
+
+### Quick Start for Contributors
+
+```bash
+# 1. Sync with develop
+git checkout develop
+git pull origin develop
+
+# 2. Create feature branch
+git checkout -b feature/your-feature-name
+
+# 3. Make changes and commit
+git add .
+git commit -m "feat: add your feature"
+
+# 4. Push and create PR
+git push origin feature/your-feature-name
+```
+
+For detailed contribution guidelines, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs) — Learn about Next.js features and API
+- [React Documentation](https://react.dev) — Learn React
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) — Utility-first CSS framework
+- [TypeScript Documentation](https://typescriptlang.org/docs) — JavaScript with types
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is private and proprietary.
