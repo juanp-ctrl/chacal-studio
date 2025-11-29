@@ -70,3 +70,23 @@
 
 ---
 
+## Phase 04 – Internationalization & Content Localization Summary
+
+**Outcome:** Successfully implemented full internationalization support using `next-intl` with App Router. The site now supports Spanish (es-AR, default) and English (en) with SEO-friendly locale-based routing (`/es-AR/...`, `/en/...`). The app directory was restructured under `app/[locale]/` with middleware for automatic locale detection and redirection. A language switcher (Globe icon) was added to the Header for seamless locale switching. All components were refactored to use `useTranslations` (client) and `getTranslations` (server) hooks. Comprehensive message files contain complete translations for all sections: Hero, Method, Impact, Services, Plant Based Treaty, SDG, Partners, Projects, Navigation, and Footer. Project content was fully localized with bilingual titles, descriptions, challenges, solutions, and results for all 6 projects. English translations were refined to match Chacal Estudio's professional-yet-warm brand voice while preserving the meaning and tone of Spanish originals.
+
+**Agents Involved:**
+- Agent_i18n_SEO_Legal
+
+**Task Logs:**
+- [Task 4.1 - Setup next-intl, App Router, Routing](Phase_04_Internationalization_Content_Localization/Task_4.1_Setup_next_intl_App_Router_Routing.md)
+- [Task 4.2 - Create and Organize Translation Messages](Phase_04_Internationalization_Content_Localization/Task_4.2_Create_Organize_Translation_Messages.md)
+- [Task 4.3 - Localize Long-Form Content](Phase_04_Internationalization_Content_Localization/Task_4.3_Localize_Long_Form_Content.md)
+
+**Key Artifacts:**
+- i18n config: `i18n/routing.ts`, `i18n/request.ts`, `middleware.ts`
+- Messages: `messages/es-AR.json`, `messages/en.json`
+- Locale layout: `app/[locale]/layout.tsx`
+- Language switcher: integrated in `components/organisms/Header.tsx`
+
+---
+
