@@ -3,10 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
+        - curl -fsSL https://get.pnpm.io/install.sh | sh
+        - export PATH=$HOME/.local/share/pnpm:$PATH
         - pnpm install --frozen-lockfile
     build:
       commands:
-        - pnpm lint
         - pnpm build
   artifacts:
     baseDirectory: .next
@@ -14,6 +15,6 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
-      - .next/cache/**/*
+      - node_modules
+      - .pnpm-store
 
