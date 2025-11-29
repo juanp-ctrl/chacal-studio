@@ -17,7 +17,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative -mt-20 flex min-h-screen items-center justify-center overflow-hidden bg-[var(--brand-blue)]"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--brand-blue)]"
     >
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 z-0 opacity-5">

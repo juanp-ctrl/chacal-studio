@@ -17,9 +17,9 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 
 export function Logo({ className, ...props }: LogoProps) {
   return (
-    <div className={cn("relative w-full h-full", className)} aria-label="Chacal Studio Logo">
+    <div className={cn("relative w-full", className)} aria-label="Chacal Studio Logo">
       <svg
-        className="block w-full h-full"
+        className="block w-full h-auto"
         fill="none"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 248 106"

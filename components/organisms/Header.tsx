@@ -49,30 +49,32 @@ export function Header({ className }: HeaderProps) {
 
   const navLinks = [
     { label: "The Method", href: "/#method", type: "anchor" },
-    { label: "Projects", href: "/#projects", type: "anchor" },
+    // { label: "Projects", href: "/#projects", type: "anchor" },
     { label: "Our Impact", href: "/#impact", type: "anchor" },
     { label: "Services", href: "/#services", type: "anchor" },
+    { label: "Projects", href: "/projects", type: "route" },
     { label: "Plant Based Treaty", href: "/#plant-based", type: "anchor" },
-    // { label: "All Projects", href: "/projects", type: "route" }, // Optional if needed in nav
   ];
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string, type: string) => {
     if (type === "anchor") {
-      e.preventDefault();
+      // Prevent default ONLY for anchors, not for routes
       
       // Extract target id from href (e.g., "/#method" -> "method")
       const targetId = href.split("#")[1];
       
-      if (pathname === "/") {
+      if (pathname === "/" && targetId) {
+        e.preventDefault();
         // Smooth scroll if on home page
         const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
           setIsMobileMenuOpen(false);
         }
-      } else {
-        // Navigate to home with hash if on other pages
-        router.push(href);
+      } else if (targetId) {
+        // Allow default navigation for hash links from other pages
+        // The browser will handle the jump to hash after navigation
+        setIsMobileMenuOpen(false);
       }
     } else {
         // Default navigation for routes
@@ -84,7 +86,7 @@ export function Header({ className }: HeaderProps) {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
-        isScrolled ? "bg-[var(--brand-blue)]/95 backdrop-blur-sm shadow-md py-3" : "bg-transparent py-5",
+        isScrolled ? "bg-(--brand-blue)/95 backdrop-blur-sm shadow-md py-3" : "bg-transparent py-5",
         className
       )}
       role="banner"
@@ -107,17 +109,17 @@ export function Header({ className }: HeaderProps) {
               key={link.label}
               href={link.href}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavigation(e, link.href, link.type)}
-              className="text-sm font-medium text-white/90 hover:text-[var(--accent)] transition-colors relative group"
+              className="text-sm font-medium text-white/90 hover:text-accent transition-colors relative group"
             >
               {link.label}
-              <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
           
           <Button 
             variant="default" 
             size="sm" 
-            className="bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white rounded-full px-6"
+            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-6"
             onClick={() => {
                 // Contact anchor
                 const element = document.getElementById('contact');
@@ -143,7 +145,7 @@ export function Header({ className }: HeaderProps) {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-[var(--brand-blue)] md:hidden transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-8",
+          "fixed inset-0 z-40 bg-(--brand-blue) md:hidden transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-8",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ top: "0", paddingTop: "80px" }}
@@ -154,7 +156,7 @@ export function Header({ className }: HeaderProps) {
               key={link.label}
               href={link.href}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavigation(e, link.href, link.type)}
-              className="text-xl font-medium text-white hover:text-[var(--accent)] transition-colors"
+              className="text-xl font-medium text-white hover:text-accent transition-colors"
             >
               {link.label}
             </Link>
@@ -162,7 +164,7 @@ export function Header({ className }: HeaderProps) {
           <Button 
             variant="default" 
             size="lg" 
-            className="bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-white rounded-full px-8 w-full max-w-xs mt-4"
+            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-8 w-full max-w-xs mt-4"
             onClick={() => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
