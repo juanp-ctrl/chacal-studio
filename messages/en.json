@@ -438,7 +438,9 @@
         "phoneInvalid": "Please enter a valid phone number",
         "messageRequired": "Message is required",
         "messageMinLength": "Message must be at least 10 characters",
-        "policiesRequired": "You must accept the privacy policy to continue"
+        "policiesRequired": "You must accept the privacy policy to continue",
+        "turnstileRequired": "Please verify you are human",
+        "generic": "Something went wrong. Please try again."
       }
     },
     "connect": "Let's connect",

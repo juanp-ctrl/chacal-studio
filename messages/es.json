@@ -438,7 +438,9 @@
         "phoneInvalid": "Por favor ingresá un número de teléfono válido",
         "messageRequired": "El mensaje es obligatorio",
         "messageMinLength": "El mensaje debe tener al menos 10 caracteres",
-        "policiesRequired": "Debés aceptar las políticas de privacidad para continuar"
+        "policiesRequired": "Debés aceptar las políticas de privacidad para continuar",
+        "turnstileRequired": "Por favor verifica que eres humano",
+        "generic": "Algo salió mal. Por favor inténtalo de nuevo."
       }
     },
     "connect": "Conectemos",

@@ -38,20 +38,27 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     // Basic validation for Turnstile
     if (!turnstileToken) {
-      // In development, we might not have a valid key, so we can skip or show warning
-      // For now, let's just warn if missing but proceed if it's a dev environment check or just warn
-      // Implementation instruction says: "Captures Turnstile token".
-      // We will just log it for now as part of the payload prep.
-      console.warn("Turnstile token missing");
+      toast.error(t("error.turnstileRequired"));
+      return;
     }
 
     try {
-      console.log("Form Data:", data);
-      console.log("Turnstile Token:", turnstileToken);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          turnstileToken,
+        }),
+      });
 
-      // Task 6.3 will handle actual API call
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Submission failed");
+      }
 
       setIsSuccess(true);
       toast.success(t("success"));
@@ -64,7 +71,7 @@ export function ContactForm() {
       }, 3000);
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error("An error occurred. Please try again.");
+      toast.error(t("error.generic"));
     }
   };
 
