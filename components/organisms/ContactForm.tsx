@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { toast } from "sonner";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/atoms/Button";
@@ -204,15 +204,22 @@ export function ContactForm() {
 
       <Button
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting || isSuccess}
         variant="accent"
         size="lg"
-        className="w-full rounded-full hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+        className={`w-full rounded-full transition-all duration-300 ${
+          isSuccess ? "bg-green-600 hover:bg-green-700" : "hover:scale-105 hover:shadow-2xl"
+        }`}
       >
         {isSubmitting ? (
           <>
             {t("sending")}
             <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+          </>
+        ) : isSuccess ? (
+          <>
+            {t("success")}
+            <Check size={20} className="ml-2" />
           </>
         ) : (
           <>
