@@ -57,9 +57,11 @@ export function ContactForm() {
       toast.success(t("success"));
       reset();
       setTurnstileToken(null);
-      // Reset success state after a delay or keep it to show a "Thank you" message?
-      // Instructions say: "Show success message (toast or inline), optionally reset form"
-      // I'll keep the toast and reset.
+      
+      // Reset success state after 3 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 3000);
     } catch (error) {
       console.error("Submission error:", error);
       toast.error("An error occurred. Please try again.");
