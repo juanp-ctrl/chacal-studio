@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
+import { CookieBanner } from "@/components/organisms/CookieBanner";
 import "../globals.css"; 
 import { Crimson_Text, DM_Sans, Alex_Brush } from "next/font/google";
 
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
           </main>
           
           <Footer />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

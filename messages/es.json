@@ -400,6 +400,12 @@
       "solution": "Construimos una marca cálida y optimista, centrada en el bienestar y el ahorro familiar, alejándonos del tecnicismo habitual del sector.",
       "results": "Duplicación de las instalaciones mensuales y apertura de dos nuevas sucursales regionales."
     }
+  },
+  "cookies": {
+    "title": "Aviso de Cookies",
+    "message": "Usamos cookies para mejorar tu experiencia y analizar nuestro tráfico. Al continuar navegando, aceptás nuestra política de privacidad.",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "link": "Leer más"
   }
 }
-

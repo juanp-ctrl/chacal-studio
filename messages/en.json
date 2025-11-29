@@ -366,7 +366,7 @@
       "description": "User experience design for a remote learning platform specifically designed for areas with low connectivity.",
       "challenge": "Create an intuitive and lightweight interface that works on older devices and unstable connections, without sacrificing pedagogical quality.",
       "solution": "We implemented an \"offline-first\" design with a clean and friendly aesthetic, prioritizing clarity and accessibility over heavy decorative elements.",
-      "results": "Adoption by more than 50 rural schools and an 85% course completion rate."
+      "results": "Adopción by more than 50 rural schools and an 85% course completion rate."
     },
     "raices-del-futuro": {
       "title": "Roots of the Future",
@@ -388,7 +388,7 @@
       "title": "Native Voices",
       "summary": "Podcast platform to preserve endangered indigenous languages.",
       "description": "A living sound archive that celebrates linguistic and cultural diversity through stories told in first person.",
-      "challenge": "Preserve oral languages in a modern digital format that is attractive to new generations.",
+      "challenge": "Preservar oral languages in a modern digital format that is attractive to new generations.",
       "solution": "We designed an immersive auditory experience accompanied by a minimalist visual interface that gives prominence to the voice and soundscape.",
       "results": "Documentation of 12 endangered languages and creation of an active community of young speakers."
     },
@@ -400,5 +400,12 @@
       "solution": "We built a warm and optimistic brand, focused on well-being and family savings, moving away from the usual technicality of the sector.",
       "results": "Doubling of monthly installations and opening of two new regional branches."
     }
+  },
+  "cookies": {
+    "title": "Cookie Notice",
+    "message": "We use cookies to improve your experience and analyze our traffic. By continuing to browse, you accept our privacy policy.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "link": "Read more"
   }
 }
