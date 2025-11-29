@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="bg-(--brand-blue) text-white py-16 px-6 sm:px-8 lg:px-12 border-t border-white/10" role="contentinfo">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12" id="contact">
           {/* Brand */}
           <div>
             <div className="mb-6 w-32">

@@ -112,7 +112,7 @@ export function Header({ className }: HeaderProps) {
               key={link.href}
               href={link.href}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavigation(e, link.href, link.type)}
-              className="text-sm font-medium text-white/90 hover:text-accent transition-colors relative group"
+              className="text-sm font-medium text-white/90 hover:text-accent transition-colors relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
             >
               {link.label}
               <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
@@ -123,7 +123,10 @@ export function Header({ className }: HeaderProps) {
           <div className="relative">
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase"
+              className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+              aria-expanded={isLangMenuOpen}
+              aria-haspopup="true"
+              aria-label={t("switchLanguage")}
             >
               <Globe size={18} />
               {locale === 'es' ? 'ES' : 'EN'}
@@ -168,7 +171,7 @@ export function Header({ className }: HeaderProps) {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
@@ -184,6 +187,9 @@ export function Header({ className }: HeaderProps) {
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ top: "0", paddingTop: "80px" }}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("menu")}
       >
         <nav className="flex flex-col items-center gap-6 w-full px-8">
           {navLinks.map((link) => (

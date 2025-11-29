@@ -5,7 +5,9 @@
     "services": "Services",
     "plantBased": "Plant Based Treaty",
     "contact": "Contact",
-    "projects": "Projects"
+    "projects": "Projects",
+    "menu": "Menu",
+    "switchLanguage": "Switch Language"
   },
   "hero": {
     "title": "Communicating the human",

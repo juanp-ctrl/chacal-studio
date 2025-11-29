@@ -5,7 +5,6 @@ import { routing } from '@/i18n/routing';
 import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
 import "../globals.css"; 
-import type { Metadata } from "next";
 import { Crimson_Text, DM_Sans, Alex_Brush } from "next/font/google";
 
 const crimsonText = Crimson_Text({

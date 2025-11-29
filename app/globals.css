@@ -29,7 +29,7 @@
   
   /* Accent = Orange ONLY for CTAs */
   --accent: #FD9A6B;
-  --accent-foreground: #ffffff;
+  --accent-foreground: #2F2E59;
   
   /* Utility colors */
   --destructive: #ef4444;
@@ -40,7 +40,7 @@
   --switch-background: #d1d5db;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #FD9A6B;
+  --ring: #2F2E59;
   
   /* Charts - blue dominant */
   --chart-1: #2F2E59;

@@ -87,11 +87,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Home({ params }: PageProps) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "hero" });
 
   const baseUrl = "https://chacalestudio.ar";
-  const currentPath = locale === routing.defaultLocale ? "" : `/${locale}`;
-  const canonicalUrl = `${baseUrl}${currentPath}`;
 
   // Organization JSON-LD
   const organizationJsonLd = {
