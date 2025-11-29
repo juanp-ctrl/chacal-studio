@@ -126,15 +126,15 @@ export function Header({ className }: HeaderProps) {
               className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase"
             >
               <Globe size={18} />
-              {locale === 'es-AR' ? 'ES' : 'EN'}
+              {locale === 'es' ? 'ES' : 'EN'}
             </button>
             {isLangMenuOpen && (
               <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg overflow-hidden py-1 min-w-[100px]">
                 <button
-                  onClick={() => switchLocale('es-AR')}
+                  onClick={() => switchLocale('es')}
                   className={cn(
                     "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800",
-                    locale === 'es-AR' && "font-bold bg-gray-50"
+                    locale === 'es' && "font-bold bg-gray-50"
                   )}
                 >
                   Español
@@ -200,10 +200,10 @@ export function Header({ className }: HeaderProps) {
           {/* Mobile Language Switcher */}
           <div className="flex gap-4 mt-4">
             <button
-              onClick={() => switchLocale('es-AR')}
+              onClick={() => switchLocale('es')}
               className={cn(
                 "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20",
-                locale === 'es-AR' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
+                locale === 'es' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
               )}
             >
               Español
