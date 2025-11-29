@@ -1,40 +1,61 @@
-import { Metadata } from 'next';
-import { ProjectCard } from '@/components/molecules/ProjectCard';
-import { Heading } from '@/components/atoms/Heading';
-import { Text } from '@/components/atoms/Text';
-import { projects } from '@/lib/projects';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Proyectos | Chacal Studio',
-  description: 'Descubre nuestros proyectos de impacto social, diseño y comunicación estratégica.',
-};
+import { motion } from 'motion/react';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import { ProjectCard } from '@/components/molecules/ProjectCard';
+import { projects } from '@/lib/projects';
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen pt-24 pb-20">
-      {/* Header Section */}
-      <section className="container mx-auto px-4 md:px-6 mb-16">
-        <div className="max-w-3xl">
-          <Heading level={1} className="mb-6">
+    <div className="min-h-screen bg-background">
+      {/* Hero Header - Matches Figma/Source Design */}
+      <div className="bg-primary text-primary-foreground py-24 px-6 sm:px-8 lg:px-12 pt-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300 mb-8 group"
+            >
+              <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform duration-300" />
+              Volver al inicio
+            </Link>
+          </motion.div>
+          
+          <motion.h1
+            className="mb-6 tracking-tight font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Nuestros Proyectos
-          </Heading>
-          <Text size="lg" className="text-muted-foreground">
-            Cada proyecto es una oportunidad para generar impacto positivo. 
-            Descubre cómo el diseño y la comunicación pueden transformar realidades 
-            a través de nuestras colaboraciones con organizaciones y marcas con propósito.
-          </Text>
+          </motion.h1>
+          
+          <motion.p
+            className="text-primary-foreground/80 text-lg sm:text-xl max-w-3xl font-light leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Cada proyecto es una oportunidad para generar impacto positivo. Descubre cómo el diseño y la comunicación pueden transformar realidades.
+          </motion.p>
         </div>
-      </section>
+      </div>
 
       {/* Projects Grid */}
-      <section className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} index={index} />
-          ))}
+      <div className="py-24 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} index={index} />
+            ))}
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
-

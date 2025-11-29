@@ -10,29 +10,33 @@ important_findings: false
 # Task Log: Task 3.2 - Implement Projects Index Page
 
 ## Summary
-Implemented the Projects Index Page (`/projects`) with a responsive grid layout and animated project cards, using a new data model and atomic components.
+Implemented the Projects Index Page (`/projects`) with a responsive grid layout and animated project cards. Updated the global Header to include the Projects link and resolved an import issue with `framer-motion` by switching to `motion/react`.
 
 ## Details
-- Created `lib/projects.ts` with the `Project` interface and 6 sample projects demonstrating Chacal's portfolio range.
+- Created `lib/projects.ts` with the `Project` interface and 6 sample projects.
 - Developed `components/molecules/ProjectCard.tsx` featuring:
-  - `framer-motion` entry animations.
-  - Hover effects on the image and title.
+  - `motion/react` entry animations (switched from `framer-motion` to fix build error).
+  - Hover effects on image and title.
   - Responsive image optimization using `next/image`.
-  - Accessible structure with semantic HTML.
+  - Accessible structure.
 - Built `app/projects/page.tsx` integrating:
   - Page header with title and description.
   - Responsive grid system (1-3 columns).
   - SEO metadata integration.
-  - Consistent design tokens for spacing and typography.
+- Updated `components/organisms/Header.tsx` to:
+  - Add "Projects" link pointing to `/projects` route.
+  - Fix Tailwind class linter warnings (e.g., `bg-[var(--brand-blue)]` -> `bg-(--brand-blue)`).
+  - Ensure correct navigation behavior for anchor vs route links.
 
 ## Output
 - `lib/projects.ts` (Data model)
 - `components/molecules/ProjectCard.tsx` (New component)
 - `app/projects/page.tsx` (New route)
+- `components/organisms/Header.tsx` (Updated navigation and styles)
 
 ## Issues
-None.
+- Initial build error: `Module not found: Can't resolve 'framer-motion'`.
+- Resolution: Switched import to `import { motion } from 'motion/react';` as `motion` is the installed package name (v12+).
 
 ## Next Steps
 - Implement the individual Project Detail Page (`/projects/[slug]`) as per Task 3.3.
-
