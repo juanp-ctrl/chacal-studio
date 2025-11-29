@@ -4,39 +4,40 @@ task_ref: Task 3.2
 status: Completed
 ad_hoc_delegation: false
 compatibility_issues: false
-important_findings: false
+important_findings: true
 ---
 
 # Task Log: Task 3.2 - Implement Projects Index Page
 
 ## Summary
-Implemented the Projects Index Page (`/projects`) with a responsive grid layout and animated project cards. Updated the global Header to include the Projects link and resolved an import issue with `framer-motion` by switching to `motion/react`.
+Implemented the Projects Index Page (`/projects`) with a responsive grid layout and animated project cards. Aligned the page design with the provided Figma reference.
 
 ## Details
 - Created `lib/projects.ts` with the `Project` interface and 6 sample projects.
 - Developed `components/molecules/ProjectCard.tsx` featuring:
-  - `motion/react` entry animations (switched from `framer-motion` to fix build error).
-  - Hover effects on image and title.
+  - `motion/react` entry animations.
+  - Design-aligned structure: `aspect-[4/5]` image, uppercase category, bold title, no card borders.
   - Responsive image optimization using `next/image`.
-  - Accessible structure.
 - Built `app/projects/page.tsx` integrating:
-  - Page header with title and description.
-  - Responsive grid system (1-3 columns).
-  - SEO metadata integration.
-- Updated `components/organisms/Header.tsx` to:
-  - Add "Projects" link pointing to `/projects` route.
-  - Fix Tailwind class linter warnings (e.g., `bg-[var(--brand-blue)]` -> `bg-(--brand-blue)`).
-  - Ensure correct navigation behavior for anchor vs route links.
+  - Dark Hero Header (`bg-primary`, white text) matching Figma design.
+  - Back link with `ArrowLeft` icon.
+  - Responsive grid system (1-3 columns) with consistent padding.
+- Updated `components/organisms/Header.tsx` to include the "Projects" link.
 
 ## Output
 - `lib/projects.ts` (Data model)
-- `components/molecules/ProjectCard.tsx` (New component)
-- `app/projects/page.tsx` (New route)
-- `components/organisms/Header.tsx` (Updated navigation and styles)
+- `components/molecules/ProjectCard.tsx` (Component matching Figma design)
+- `app/projects/page.tsx` (Route matching Figma design)
+- `components/organisms/Header.tsx` (Updated navigation)
+- `components/atoms/Logo.tsx` (Attempted fix for rendering issue)
 
 ## Issues
-- Initial build error: `Module not found: Can't resolve 'framer-motion'`.
-- Resolution: Switched import to `import { motion } from 'motion/react';` as `motion` is the installed package name (v12+).
+- Initial build error with `framer-motion` resolved by switching to `motion/react`.
+- **Unresolved Issue**: The Header component is not visible correctly on initial load over the dark hero section in the Projects page. The Logo visibility fix was insufficient. This needs to be addressed in a subsequent task (likely Task 3.3 or a dedicated UI fix task).
+
+## Important Findings
+- The global Header's interaction with dark-themed hero sections needs a review. It seems to rely on scroll state for visibility or background contrast which fails on static dark backgrounds without scroll.
 
 ## Next Steps
+- **PRIORITY FIX**: Debug and fix Header visibility on dark pages (Projects Index, Project Detail).
 - Implement the individual Project Detail Page (`/projects/[slug]`) as per Task 3.3.

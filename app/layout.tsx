@@ -37,17 +37,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${crimsonText.variable} ${dmSans.variable} ${alexBrush.variable}`}>
-      <body className="antialiased bg-[var(--background)] text-[var(--foreground)] font-body">
+      <body className="antialiased bg-background text-foreground font-body">
         <a 
           href="#main-content" 
-          className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-4 focus:left-4 focus:p-4 focus:bg-white focus:text-[var(--brand-blue)] focus:rounded-md focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-60 focus:top-4 focus:left-4 focus:p-4 focus:bg-white focus:text-(--brand-blue) focus:rounded-md focus:shadow-lg"
         >
           Skip to main content
         </a>
         
         <Header />
         
-        <main id="main-content" className="min-h-screen pt-20">
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         
