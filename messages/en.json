@@ -1,0 +1,247 @@
+{
+  "nav": {
+    "method": "The Method",
+    "impact": "Our Impact",
+    "services": "Services",
+    "plantBased": "Plant Based Treaty",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Communicating the human",
+    "subtitle": "We create purpose-driven communication strategies from Patagonia. We are a communication and design studio that transforms brands into agents of change, respecting all sentient beings and the planet.",
+    "cta": "Discover our approach"
+  },
+  "marquee": {
+    "text": "We believe in brands that understand their environment. That communicate responsibly. That leave footprints that regenerate, not harm."
+  },
+  "method": {
+    "title": "The method",
+    "description": "From a need arises analysis, in the analysis appears discovery/understanding, then we define objectives, find strategies, devise solutions, obtain results and leave footprints. Those footprints are what allow us to be recognizable, memorable and differentiate ourselves from the rest, strengthening values through solid, human and planned communication.",
+    "step1": {
+      "title": "Analysis",
+      "description": "From a need arises deep analysis"
+    },
+    "step2": {
+      "title": "Discovery",
+      "description": "Understanding and context comprehension"
+    },
+    "step3": {
+      "title": "Objectives",
+      "description": "We define clear goals and strategies"
+    },
+    "step4": {
+      "title": "Results",
+      "description": "Concrete solutions that generate impact"
+    },
+    "step5": {
+      "title": "Footprints",
+      "description": "Memorable and differentiated identity"
+    }
+  },
+  "future": {
+    "title": "The future we build",
+    "p1": "We believe that brands can become agents of change and generators of positive changes by adopting concrete triple impact actions, where communication plays an essential role, allowing us to inform, educate and inspire people to join their vision and purpose.",
+    "p2": "Being aware of our passage through the planet and the footprints we leave, invites us to reflect, to think beyond individual benefits and to work together to create a better world in social, environmental and economic terms.",
+    "p3": "On the path to a more just future, we believe in the strength of collaboration, in the importance of caring for our environment, in the value of building a more just society and in the power of active participation of each individual.",
+    "p4": "In this way, we are inspired by an environmentalist approach, where the protection and preservation of our planet is an absolute priority. We recognize the importance of adopting sustainable practices in all aspects of our lives and work, we embrace an inclusive perspective that puts all sentient beings at the center, and we believe in the value of fostering mutual respect and building an equitable world."
+  },
+  "impact": {
+    "title": "Our impact",
+    "subtitle": "We commit to being a force for good in the world.",
+    "team": {
+      "title": "In the team",
+      "description": "We foster a safe, inclusive and equitable work space, where there is no place for discrimination or harassment. We believe in flexibility and remote work as part of a real balance between professional and personal life. We seek for each collaborator's growth to be aligned with their purpose, with fair and transparent remuneration."
+    },
+    "community": {
+      "title": "In the community",
+      "description": "We guide other organizations to adopt triple impact practices. We support local suppliers and prioritize those from underrepresented groups. We offer reduced rates and pro bono services to NGOs and vulnerable groups, we reserve the right not to collaborate with clients or suppliers whose activity is incompatible with our values."
+    },
+    "planet": {
+      "title": "On the planet",
+      "description": "We measure our energy and water consumption and our emissions to understand and reduce our impact. We share resources with our team to encourage sustainable practices in their workspaces, such as efficient use of energy and safe disposal of electronic waste. We promote digitization and have a zero waste to landfill commitment, separating our waste for recycling or composting."
+    }
+  },
+  "services": {
+    "title": "What we do",
+    "consulting": {
+      "title": "Consulting and strategy",
+      "description": "We help our clients achieve their goals through defining their target and determining goals, then developing a comprehensive and personalized communication plan for them."
+    },
+    "advisory": {
+      "title": "Communication advisory",
+      "description": "A personalized space to understand, analyze and find the right strategy according to each objective. We do this through a one-to-one relationship, seeking to understand the current situation and understand the needs."
+    },
+    "diagnostic": {
+      "title": "Communication diagnosis",
+      "description": "We research, evaluate and develop strategies to help our clients understand how they are currently communicating and identify opportunities for improvement."
+    },
+    "management": {
+      "title": "Communication management",
+      "description": "We take care of planning and managing the internal and/or external communication of brands, based on solid and practical strategies and tactics."
+    },
+    "sustainability": {
+      "title": "Sustainability Consulting",
+      "description": "Every task and every project is carried out with a socio-environmental focus, where we carry out organizational and product carbon footprint inventories, design sustainability strategies, Life Cycle Analysis (LCA), preparation and design of sustainability reports, in-company training, etc."
+    }
+  },
+  "plantBased": {
+    "title": "Alliance with Plant Based Treaty",
+    "intro": "We are proud to work alongside the Plant Based Treaty, a grassroots global initiative that seeks to put food systems at the center of the debate on the climate crisis.",
+    "mission": "The mission of the Treaty",
+    "missionText1": "The Plant Based Treaty is a direct response to the climate emergency. Its mission is to promote an urgent change towards a fair and plant-based food system, that allows us to live safely within our planetary boundaries and reforest the Earth.",
+    "missionText2": "Following the Paris Agreement model, the treaty is based on three fundamental principles (3Rs):",
+    "relinquish": {
+      "title": "Relinquish",
+      "description": "Stop the degradation of ecosystems caused by animal agriculture."
+    },
+    "redirect": {
+      "title": "Redirect",
+      "description": "Redirect policies and subsidies towards a plant-based food system."
+    },
+    "restore": {
+      "title": "Restore",
+      "description": "Reforest and restore key ecosystems damaged by livestock."
+    },
+    "contribution": {
+      "title": "Our contribution",
+      "text": "We actively support this cause by donating pro bono consulting and strategic management hours to amplify its message, and we donate 2% of our total monthly sales to fund its programs."
+    },
+    "impact": {
+      "title": "The Impact",
+      "text": "This initiative has already gained the support of cultural figures such as Paul McCartney and Dr. Jane Goodall, and has been adopted by 34 cities in 10 countries, including capitals and major urban centers such as Los Angeles, Amsterdam, Edinburgh and Belfast."
+    },
+    "join": "Join the movement",
+    "signIndividual": "Sign as an individual",
+    "signOrg": "Sign as an organization",
+    "signBusiness": "Sign as a business",
+    "donate": {
+      "title": "Make your donation",
+      "text": "Your support helps us amplify the message and work for a more sustainable future",
+      "cta": "Donate now"
+    },
+    "learnMore": "Learn more about Plant Based Treaty"
+  },
+  "sdg": {
+    "title": "Sustainable Development Goals",
+    "subtitle": "Our policies and impact actions directly contribute to the United Nations SDG goals, focusing our efforts on:",
+    "5": {
+      "title": "Gender Equality",
+      "description": "We contribute to goals 5.1 (eliminate discrimination) and 5.5 (ensure full participation) through our non-discrimination policies and preference for suppliers from underrepresented groups, including women-led businesses."
+    },
+    "8": {
+      "title": "Decent Work and Economic Growth",
+      "description": "We promote goals 8.5 (full and productive employment with fair pay), 8.6 (employment and training for youth) and 8.7 (eradicate forced labor and child labor) through our equitable remuneration policies, prohibition of child/forced labor and a flexible work environment."
+    },
+    "11": {
+      "title": "Sustainable Cities and Communities",
+      "description": "We contribute to goal 11.6 (reduce the environmental impact of cities) thanks to our environmental management plan, which includes proper waste management and separation and safe disposal of electronic waste."
+    },
+    "12": {
+      "title": "Responsible Production and Consumption",
+      "description": "We work towards goal 12.5 (reduce waste generation) by promoting digitization to minimize paper use and encouraging the circular economy in our operations."
+    },
+    "13": {
+      "title": "Climate Action",
+      "description": "We contribute to goals 13.2 (incorporate climate change measures into policies) and 13.3 (improve education and awareness) through measuring and offsetting our carbon footprint and actively educating our clients in sustainable practices."
+    },
+    "partners": {
+      "title": "We are part of",
+      "subtitle": "We collaborate with organizations that share our vision of a more just and sustainable world",
+      "animalSave": {
+        "name": "Animal Save Movement",
+        "description": "We align with Animal Save Movement's mission to create a movement of justice, compassion and veganism through public awareness and education, seeking to end animal exploitation and objectification, and actively adopting an anti-speciesist stance against all forms of discrimination and oppression."
+      },
+      "cleanCreatives": {
+        "name": "Clean Creatives",
+        "description": "As a studio, we commit to rejecting contracts with the fossil fuel industry. We believe that the creative industry should not use its talent to greenwash the image of corporations that drive the climate crisis."
+      },
+      "ati": {
+        "name": "ati (Triple Impact Agencies)",
+        "description": "The first Latin American community that brings together communication, advertising and marketing agencies with purpose. Founded by done! and Bi, ati. seeks to capitalize creative talent to contribute to solving the most urgent socio-environmental problems and drive the transition to a new social and economic model."
+      },
+      "redCreer": {
+        "name": "Red Creer",
+        "description": "We are part of Red Creer, a collaborative network of more than 160 organizations from the public, private and social sectors in Argentina, which seeks to generate socio-economic inclusion opportunities for people who are or were deprived of their liberty, addressing stigma and building a society with greater opportunities for all."
+      },
+      "learnMore": "Learn more"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk about how we can help you",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "organization": "Organization",
+      "message": "Message",
+      "policies": "I accept the privacy policies and the processing of my personal data",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "placeholder": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "phone": "+1 234 567-8900",
+        "organization": "Your organization",
+        "message": "Tell us about your project (minimum 20 characters)"
+      },
+      "error": {
+        "policies": "You must accept the privacy policies",
+        "messageLength": "The message must be at least 20 characters"
+      },
+      "success": "Message sent successfully! We will contact you soon."
+    },
+    "connect": "Let's connect",
+    "connectText": "We are here to help you communicate your purpose effectively and sustainably. Whether you are looking for strategic consulting or want to transform your communication with a triple impact approach, we want to hear from you.",
+    "bCorp": "Certified B Corporation",
+    "bCorpText": "We are certified as a B Corporation, committed to standards of social and environmental performance, public transparency and legal accountability."
+  },
+  "footer": {
+    "tagline": "Communication and design with purpose from Argentine Patagonia.",
+    "links": "Links",
+    "follow": "Follow us",
+    "copyright": "Chacal Estudio. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
+  },
+  "cookies": {
+    "title": "Cookie Usage",
+    "description": "We use cookies to improve your experience on our website. Essential cookies are necessary for the site to function, while analytics help us understand how you interact with our content.",
+    "shortDescription": "We use cookies to improve your experience.",
+    "acceptAll": "Accept all",
+    "accept": "Accept",
+    "rejectOptional": "Reject optional",
+    "reject": "Reject",
+    "customize": "Customize",
+    "preferences": "Cookie Preferences",
+    "essential": "Essential Cookies",
+    "essentialText": "Necessary for basic site functionality",
+    "analytics": "Analytics Cookies",
+    "analyticsText": "Help us understand how you use the site",
+    "marketing": "Marketing Cookies",
+    "marketingText": "Used to personalize advertising",
+    "save": "Save preferences",
+    "back": "Back"
+  },
+  "loader": {
+    "text": "Communicating the human, with a socio-environmental focus"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selected cases that reflect our commitment to purposeful communication and triple impact.",
+    "viewAll": "View all projects",
+    "backHome": "Back home",
+    "allProjects": "Our Projects",
+    "allProjectsSubtitle": "Each project is an opportunity to generate positive impact. Discover how design and communication can transform realities.",
+    "backToProjects": "Back to projects",
+    "detail": {
+      "challenge": "The challenge",
+      "process": "The process",
+      "solution": "The solution",
+      "results": "Results",
+      "gallery": "Gallery",
+      "nextProject": "Next project"
+    }
+  }
+}
+

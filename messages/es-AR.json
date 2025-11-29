@@ -1,0 +1,247 @@
+{
+  "nav": {
+    "method": "El Método",
+    "impact": "Nuestro Impacto",
+    "services": "Servicios",
+    "plantBased": "Plant Based Treaty",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Comunicando lo humano",
+    "subtitle": "Creamos estrategias de comunicación con propósito desde la Patagonia. Somos un estudio de comunicación y diseño que transforma marcas en agentes de cambio, respetando a todos los seres sintientes y el planeta.",
+    "cta": "Descubrí nuestra propuesta"
+  },
+  "marquee": {
+    "text": "Creemos en marcas que entienden su entorno. Que comunican con responsabilidad. Que dejan huellas que regeneran, no que lastiman."
+  },
+  "method": {
+    "title": "El método",
+    "description": "De una necesidad surge el análisis, en el análisis aparece el descubrimiento/entendimiento, para luego delimitar objetivos, encontrar estrategias, idear soluciones, obtener resultados y dejar huellas. Esas huellas son lo que nos permite ser reconocibles, recordables y diferenciarnos del resto, fortaleciendo valores a través de una comunicación sólida, humana y planificada.",
+    "step1": {
+      "title": "Análisis",
+      "description": "De una necesidad surge el análisis profundo"
+    },
+    "step2": {
+      "title": "Descubrimiento",
+      "description": "Entendimiento y comprensión del contexto"
+    },
+    "step3": {
+      "title": "Objetivos",
+      "description": "Delimitamos metas claras y estrategias"
+    },
+    "step4": {
+      "title": "Resultados",
+      "description": "Soluciones concretas que generan impacto"
+    },
+    "step5": {
+      "title": "Huellas",
+      "description": "Identidad recordable y diferenciada"
+    }
+  },
+  "future": {
+    "title": "El futuro que construimos",
+    "p1": "Creemos en que las marcas pueden convertirse en agentes de cambio y en generadoras de cambios positivos adoptando acciones concretas de triple impacto, donde la comunicación tiene un rol esencial, permitiendo informar, educar e inspirar a las personas a unirse a su visión y propósito.",
+    "p2": "Ser conscientes de nuestro paso por el planeta y de las huellas que dejamos, nos invita a reflexionar, a pensar más allá de los beneficios individuales y a trabajar en conjunto para crear un mundo mejor en lo social, lo ambiental y lo económico.",
+    "p3": "En el camino hacia un futuro más justo, creemos en la fuerza de la colaboración, en la importancia de cuidar nuestro entorno, en el valor de construir una sociedad más justa y en el poder de la participación activa de cada individuo.",
+    "p4": "De esta forma, nos inspira un enfoque ambientalista, donde la protección y preservación de nuestro planeta es una prioridad absoluta. Reconocemos la importancia de adoptar prácticas sostenibles en todos los aspectos de nuestras vidas y trabajos, abrazamos una perspectiva inclusiva que pone a todos los seres sintientes en el centro, y creemos en el valor de fomentar el respeto mutuo y de construir un mundo equitativo."
+  },
+  "impact": {
+    "title": "Nuestro impacto",
+    "subtitle": "Nos comprometemos a ser una fuerza de bien en el mundo.",
+    "team": {
+      "title": "En el equipo",
+      "description": "Fomentamos un espacio de trabajo seguro, inclusivo y equitativo, donde no hay lugar para la discriminación ni el acoso. Creemos en la flexibilidad y el trabajo remoto como parte de un balance real entre la vida profesional y personal. Buscamos que el crecimiento de cada colaborador esté alineado con su propósito, con remuneraciones justas y transparentes."
+    },
+    "community": {
+      "title": "En la comunidad",
+      "description": "Guiamos a otras organizaciones a adoptar prácticas de triple impacto. Apoyamos a proveedores locales y priorizamos a aquellos de grupos subrepresentados. Ofrecemos tarifas reducidas y servicios pro bono a ONGs y grupos en situación de vulnerabilidad, reservamos el derecho de no colaborar con clientes o proveedores cuya actividad sea incompatible con nuestros valores."
+    },
+    "planet": {
+      "title": "En el planeta",
+      "description": "Medimos nuestro consumo de energía, agua y nuestras emisiones para entender y reducir nuestro impacto. Compartimos recursos con nuestro equipo para fomentar prácticas sostenibles en sus espacios de trabajo, como el uso eficiente de la energía y la eliminación segura de residuos electrónicos. Promovemos la digitalización y tenemos un compromiso de cero desechos a vertederos, separando nuestros residuos para reciclaje o compostaje."
+    }
+  },
+  "services": {
+    "title": "Lo que hacemos",
+    "consulting": {
+      "title": "Consultoría y estrategia",
+      "description": "Ayudamos a nuestrxs clientxs a alcanzar sus objetivos a través de la definición de su target y la determinación de metas, para luego desarrollar un plan de comunicación integral y personalizado para ellxs."
+    },
+    "advisory": {
+      "title": "Asesoría comunicacional",
+      "description": "Un espacio personalizado para entender, analizar y encontrar la estrategia adecuada según cada objetivo. Esto lo hacemos a través de un vínculo uno a uno, buscando comprender la situación actual y entender las necesidades."
+    },
+    "diagnostic": {
+      "title": "Diagnóstico comunicacional",
+      "description": "Investigamos, evaluamos y desarrollamos estrategias para ayudar a nuestrxs clientxs a entender cómo están comunicándose actualmente y a identificar oportunidades de mejora."
+    },
+    "management": {
+      "title": "Gestión de la comunicación",
+      "description": "Nos encargamos de la planificación y gestión de la comunicación interna y/o externa de las marcas, basándonos en estrategias y tácticas sólidas y prácticas."
+    },
+    "sustainability": {
+      "title": "Consultoría Sustentable",
+      "description": "Cada tarea y cada proyecto es realizado con un foco socioambiental, donde realizamos inventarios de huella de carbono organizacional y de productos, diseño de estrategias de sustentabilidad, Análisis de Ciclo de Vida (ACV), elaboración y diseño de reportes de sustentabilidad, capacitaciones in company, etc."
+    }
+  },
+  "plantBased": {
+    "title": "Alianza con Plant Based Treaty",
+    "intro": "Estamos orgullosxs de trabajar junto al Plant Based Treaty (Acuerdo Basado en Plantas), una iniciativa global de base que busca poner a los sistemas alimentarios en el centro del debate sobre la crisis climática.",
+    "mission": "La misión del Acuerdo",
+    "missionText1": "El Plant Based Treaty es una respuesta directa a la emergencia climática. Su misión es promover un cambio urgente hacia un sistema alimentario justo y basado en plantas, que nos permita vivir de forma segura dentro de nuestros límites planetarios y reforestar la Tierra.",
+    "missionText2": "Siguiendo el modelo del Acuerdo de París, el tratado se basa en tres principios fundamentales (3R):",
+    "relinquish": {
+      "title": "Relinquish (Renunciar)",
+      "description": "Detener la degradación de los ecosistemas causada por la agricultura animal."
+    },
+    "redirect": {
+      "title": "Redirect (Redirigir)",
+      "description": "Reorientar políticas y subsidios hacia un sistema alimentario basado en plantas."
+    },
+    "restore": {
+      "title": "Restore (Restaurar)",
+      "description": "Reforestar y restaurar ecosistemas clave dañados por la ganadería."
+    },
+    "contribution": {
+      "title": "Nuestra contribución",
+      "text": "Apoyamos activamente esta causa donando horas de consultoría y gestión estratégica pro bono para amplificar su mensaje, y donamos el 2% de nuestras ventas totales mensuales para financiar sus programas."
+    },
+    "impact": {
+      "title": "El Impacto",
+      "text": "Esta iniciativa ya ha conseguido el apoyo de figuras culturales como Paul McCartney y la Dra. Jane Goodall, y ha sido adoptada por 34 ciudades en 10 países, incluyendo capitales y grandes centros urbanos como Los Ángeles, Ámsterdam, Edimburgo y Belfast."
+    },
+    "join": "Sumate al movimiento",
+    "signIndividual": "Firmá como individuo",
+    "signOrg": "Firmá como organización",
+    "signBusiness": "Firmá como negocio",
+    "donate": {
+      "title": "Hacé tu donación",
+      "text": "Tu apoyo nos ayuda a amplificar el mensaje y trabajar por un futuro más sustentable",
+      "cta": "Donar ahora"
+    },
+    "learnMore": "Conocé más sobre Plant Based Treaty"
+  },
+  "sdg": {
+    "title": "Objetivos de Desarrollo Sostenible",
+    "subtitle": "Nuestras políticas y acciones de impacto contribuyen directamente a las metas de los ODS de las Naciones Unidas, enfocando nuestros esfuerzos en:",
+    "5": {
+      "title": "Igualdad de Género",
+      "description": "Contribuimos a las metas 5.1 (eliminar la discriminación) y 5.5 (asegurar la participación plena) a través de nuestras políticas de no discriminación y la preferencia por proveedores de grupos subrepresentados, incluyendo empresas lideradas por mujeres."
+    },
+    "8": {
+      "title": "Trabajo Decente y Crecimiento Económico",
+      "description": "Impulsamos las metas 8.5 (empleo pleno y productivo con pago justo), 8.6 (empleo y capacitación para jóvenes) y 8.7 (erradicar el trabajo forzoso y el trabajo infantil) mediante nuestras políticas de remuneración equitativa, prohibición de trabajo infantil/forzoso y un entorno laboral flexible."
+    },
+    "11": {
+      "title": "Ciudades y Comunidades Sostenibles",
+      "description": "Aportamos a la meta 11.6 (reducir el impacto ambiental de las ciudades) gracias a nuestro plan de gestión ambiental, que incluye la correcta gestión y separación de residuos y la eliminación segura de residuos electrónicos."
+    },
+    "12": {
+      "title": "Producción y Consumo Responsables",
+      "description": "Trabajamos por la meta 12.5 (reducir la generación de desechos) promoviendo la digitalización para minimizar el uso de papel y fomentando la economía circular en nuestras operaciones."
+    },
+    "13": {
+      "title": "Acción por el Clima",
+      "description": "Contribuimos a las metas 13.2 (incorporar medidas de cambio climático en las políticas) y 13.3 (mejorar la educación y sensibilización) a través de la medición y compensación de nuestra huella de carbono y educando activamente a nuestros clientes en prácticas sostenibles."
+    }
+  },
+  "partners": {
+    "title": "Somos parte de",
+    "subtitle": "Colaboramos con organizaciones que comparten nuestra visión de un mundo más justo y sustentable",
+    "animalSave": {
+      "name": "Animal Save Movement",
+      "description": "Nos alineamos con la misión de Animal Save Movement de crear un movimiento de justicia, compasión y veganismo a través de la sensibilización pública y la educación, buscando poner fin a la explotación y cosificación animal, y adoptando activamente una postura anti-especista en contra de todas las formas de discriminación y opresión."
+    },
+    "cleanCreatives": {
+      "name": "Clean Creatives",
+      "description": "Como estudio, nos comprometemos a rechazar contratos con la industria de los combustibles fósiles. Creemos que la industria creativa no debe usar su talento para lavar la imagen de las corporaciones que impulsan la crisis climática."
+    },
+    "ati": {
+      "name": "ati (Agencias Triple Impacto)",
+      "description": "La primera comunidad latinoamericana que reúne a agencias de comunicación, publicidad y marketing con propósito. Fundada por done! y Bi, ati. busca capitalizar el talento creativo para contribuir a solucionar las problemáticas socioambientales más urgentes e impulsar la transición hacia un nuevo modelo social y económico."
+    },
+    "redCreer": {
+      "name": "Red Creer",
+      "description": "Integramos la Red Creer, una red colaborativa de más de 160 organizaciones de los sectores público, privado y social en Argentina, la cual busca generar oportunidades de inclusión socioeconómica para personas que están o estuvieron privadas de su libertad, abordando el estigma y construyendo una sociedad con mayores oportunidades para todos."
+    },
+    "learnMore": "Conocer más"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tenés un proyecto en mente? Hablemos sobre cómo podemos ayudarte",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "organization": "Organización",
+      "message": "Mensaje",
+      "policies": "Acepto las políticas de privacidad y el tratamiento de mis datos personales",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "placeholder": {
+        "name": "Tu nombre",
+        "email": "tu@email.com",
+        "phone": "+54 9 11 1234-5678",
+        "organization": "Tu organización",
+        "message": "Contanos sobre tu proyecto (mínimo 20 caracteres)"
+      },
+      "error": {
+        "policies": "Debes aceptar las políticas de privacidad",
+        "messageLength": "El mensaje debe tener al menos 20 caracteres"
+      },
+      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto."
+    },
+    "connect": "Conectemos",
+    "connectText": "Estamos aquí para ayudarte a comunicar tu propósito de manera efectiva y sustentable. Ya sea que busques una consultoría estratégica o quieras transformar tu comunicación con enfoque de triple impacto, queremos escucharte.",
+    "bCorp": "Empresa B Certificada",
+    "bCorpText": "Estamos certificados como Empresa B, comprometidos con estándares de desempeño social y ambiental, transparencia pública y responsabilidad legal."
+  },
+  "footer": {
+    "tagline": "Comunicación y diseño con propósito desde la Patagonia argentina.",
+    "links": "Enlaces",
+    "follow": "Seguinos",
+    "copyright": "Chacal Estudio. Todos los derechos reservados.",
+    "privacy": "Políticas de Privacidad",
+    "terms": "Términos y Condiciones"
+  },
+  "cookies": {
+    "title": "Uso de Cookies",
+    "description": "Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Las cookies esenciales son necesarias para el funcionamiento del sitio, mientras que las analíticas nos ayudan a entender cómo interactuás con nuestro contenido.",
+    "shortDescription": "Usamos cookies para mejorar tu experiencia.",
+    "acceptAll": "Aceptar todas",
+    "accept": "Aceptar",
+    "rejectOptional": "Rechazar opcionales",
+    "reject": "Rechazar",
+    "customize": "Personalizar",
+    "preferences": "Preferencias de Cookies",
+    "essential": "Cookies Esenciales",
+    "essentialText": "Necesarias para el funcionamiento básico del sitio",
+    "analytics": "Cookies Analíticas",
+    "analyticsText": "Nos ayudan a entender cómo usás el sitio",
+    "marketing": "Cookies de Marketing",
+    "marketingText": "Utilizadas para personalizar publicidad",
+    "save": "Guardar preferencias",
+    "back": "Volver"
+  },
+  "loader": {
+    "text": "Comunicando lo humano, con un foco socio ambiental"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Casos seleccionados que reflejan nuestro compromiso con la comunicación con propósito y triple impacto.",
+    "viewAll": "Ver todos los proyectos",
+    "backHome": "Volver al inicio",
+    "allProjects": "Nuestros Proyectos",
+    "allProjectsSubtitle": "Cada proyecto es una oportunidad para generar impacto positivo. Descubre cómo el diseño y la comunicación pueden transformar realidades.",
+    "backToProjects": "Volver a proyectos",
+    "detail": {
+      "challenge": "El desafío",
+      "process": "El proceso",
+      "solution": "La solución",
+      "results": "Resultados",
+      "gallery": "Galería",
+      "nextProject": "Siguiente proyecto"
+    }
+  }
+}
+
