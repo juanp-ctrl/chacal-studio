@@ -48,17 +48,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation - Fixed (mimicking the reference behavior) */}
+      {/* Navigation - Absolute positioned below header */}
       <Motion.div
-        className="fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm py-4 px-6 sm:px-8 lg:px-12 border-b border-border transition-transform duration-300"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="absolute top-24 left-0 right-0 z-40 px-6 sm:px-8 lg:px-12"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
       >
-        <div className="max-w-7xl mx-auto pt-20 lg:pt-0">
+        <div className="max-w-7xl mx-auto">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-foreground/80 hover:text-accent transition-colors duration-300 group"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-accent transition-colors duration-300 group"
           >
             <ArrowLeft
               size={20}
