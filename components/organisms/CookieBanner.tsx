@@ -40,7 +40,7 @@ export function CookieBanner() {
       aria-modal="false"
       aria-label={t("title")}
       className={cn(
-        "fixed bottom-4 left-4 right-4 md:left-4 md:right-4 md:max-w-4xl md:mx-auto z-60 p-4 md:p-6",
+        "fixed bottom-4 left-4 right-4 md:right-auto md:max-w-[50%] z-60 p-4 md:p-6",
         "bg-(--brand-blue) text-white shadow-2xl rounded-2xl",
         "border border-white/10",
         "transform transition-transform duration-500 ease-in-out",
