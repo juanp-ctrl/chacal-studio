@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Badge } from '@/components/atoms/Badge';
 import { Text } from '@/components/atoms/Text';
 import { Project } from '@/lib/projects';
