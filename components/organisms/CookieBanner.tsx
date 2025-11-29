@@ -40,14 +40,14 @@ export function CookieBanner() {
       aria-modal="false"
       aria-label={t("title")}
       className={cn(
-        "fixed bottom-4 left-4 right-4 md:right-auto md:max-w-[50%] z-60 p-4 md:p-6",
+        "fixed bottom-4 left-4 right-4 md:right-auto md:max-w-[75%] z-60 p-4 md:p-6",
         "bg-(--brand-blue) text-white shadow-2xl rounded-2xl",
         "border border-white/10",
         "transform transition-transform duration-500 ease-in-out",
         isVisible ? "translate-y-0" : "translate-y-[calc(100%+1rem)]"
       )}
     >
-      <div className="container mx-auto flex flex-col items-start gap-4 md:gap-6">
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
         <div className="flex items-start gap-4 w-full">
           <div className="p-2 bg-white/10 rounded-full shrink-0 mt-1">
             <Cookie className="w-5 h-5 text-accent" />
@@ -65,12 +65,12 @@ export function CookieBanner() {
           </div>
         </div>
 
-        <div className="flex flex-row items-center gap-3 w-full justify-end">
+        <div className="flex flex-row md:flex-nowrap items-center gap-3 w-full md:w-auto shrink-0">
           <Button
             variant="outline"
             size="sm"
             onClick={handleDecline}
-            className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white focus-visible:ring-accent flex-1 md:flex-none"
+            className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white focus-visible:ring-accent flex-1 md:flex-none whitespace-nowrap"
           >
             {t("decline")}
           </Button>
@@ -78,7 +78,7 @@ export function CookieBanner() {
             variant="default"
             size="sm"
             onClick={handleAccept}
-            className="bg-accent hover:bg-accent/90 text-white focus-visible:ring-white flex-1 md:flex-none"
+            className="bg-accent hover:bg-accent/90 text-white focus-visible:ring-white flex-1 md:flex-none whitespace-nowrap"
           >
             {t("accept")}
           </Button>
