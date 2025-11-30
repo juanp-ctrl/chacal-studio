@@ -452,5 +452,15 @@
     "connectText": "Estamos siempre abiertos a nuevas ideas y colaboraciones. Si tenés un proyecto en mente o simplemente querés saludar, no dudes en contactarnos.",
     "bCorp": "Compromiso de Impacto",
     "bCorpText": "Como empresa comprometida con el triple impacto, buscamos trabajar con organizaciones que compartan nuestros valores de sustentabilidad y responsabilidad social."
+  },
+  "marquee": {
+    "text": "COMUNICACIÓN CON PROPÓSITO • DISEÑO SUSTENTABLE • IMPACTO POSITIVO • DESDE LA PATAGONIA • "
+  },
+  "future": {
+    "title": "El futuro que construimos",
+    "p1": "Creemos que la comunicación es una herramienta poderosa para transformar la realidad. No se trata solo de vender, sino de conectar valores con acciones.",
+    "p2": "En un mundo saturado de información, elegimos contar historias que importan. Historias que inspiran cambios, que promueven la equidad y que respetan nuestro entorno.",
+    "p3": "Nuestro compromiso va más allá de la estética. Buscamos soluciones integrales que consideren el impacto social y ambiental de cada decisión de diseño.",
+    "p4": "Juntos, podemos construir un futuro donde las marcas no solo sean rentables, sino también responsables y regenerativas."
   }
 }

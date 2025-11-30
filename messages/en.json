@@ -452,5 +452,15 @@
     "connectText": "We are always open to new ideas and collaborations. If you have a project in mind or just want to say hello, do not hesitate to contact us.",
     "bCorp": "Impact Commitment",
     "bCorpText": "As a company committed to triple impact, we seek to work with organizations that share our values of sustainability and social responsibility."
+  },
+  "marquee": {
+    "text": "PURPOSE-DRIVEN COMMUNICATION • SUSTAINABLE DESIGN • POSITIVE IMPACT • FROM PATAGONIA • "
+  },
+  "future": {
+    "title": "The Future We Build",
+    "p1": "We believe communication is a powerful tool to transform reality. It's not just about selling, but about connecting values with actions.",
+    "p2": "In a world saturated with information, we choose to tell stories that matter. Stories that inspire change, promote equity, and respect our environment.",
+    "p3": "Our commitment goes beyond aesthetics. We seek comprehensive solutions that consider the social and environmental impact of every design decision.",
+    "p4": "Together, we can build a future where brands are not only profitable but also responsible and regenerative."
   }
 }
