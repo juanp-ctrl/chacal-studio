@@ -96,7 +96,7 @@ export function IntroLoader() {
 
     // Start cycling taglines
     taglineCycleRef.current = setInterval(() => {
-      setCurrentTaglineIndex((prev) => (prev + 1) % 2);
+      setCurrentTaglineIndex((prev) => (prev + 1) % taglines.length);
     }, 1500);
 
     return () => {
@@ -105,7 +105,7 @@ export function IntroLoader() {
         taglineCycleRef.current = null;
       }
     };
-  }, [showLoader, visibleImages.length, textExiting]);
+  }, [showLoader, visibleImages.length, textExiting, taglines.length]);
 
   // Final expansion and exit sequence
   useEffect(() => {
@@ -115,6 +115,9 @@ export function IntroLoader() {
     const expansionTimer = setTimeout(() => {
       setTextExiting(true);
       setIsExpanding(true);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('intro-exit-start'));
+      }
     }, 1200);
 
     // Fade out loader completely
@@ -157,7 +160,7 @@ export function IntroLoader() {
         >
           {/* Top Text - "Comunicando lo humano" */}
           <motion.h1
-            className="absolute text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif tracking-tight z-20 px-4 text-center"
+            className="absolute text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif tracking-tight z-20 px-4 text-center italic"
             style={{
               fontFamily: 'var(--font-family-heading)',
               top: '10%',
@@ -197,7 +200,7 @@ export function IntroLoader() {
                   initial={{ opacity: 0, scale: 0.8, y: 50 }}
                   animate={{
                     opacity: isExpanding ? 0 : 1,
-                    scale: isExpanding && isLastImage ? 4 : scale,
+                    scale: isExpanding ? 0.3 : scale,
                     y: 0,
                   }}
                   transition={{
@@ -239,12 +242,12 @@ export function IntroLoader() {
             <AnimatePresence mode="wait">
               <motion.p
                 key={currentTaglineIndex}
-                className="text-white/80 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-center px-4"
+                className="text-white/80 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-center px-4 italic"
                 style={{ fontFamily: 'var(--font-family-body)' }}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.35, ease: 'easeInOut' }}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
               >
                 {taglines[currentTaglineIndex]}
               </motion.p>

@@ -1,7 +1,7 @@
 # Chacal Estudio Website – Implementation Plan
 
 **Memory Strategy:** Dynamic-MD (directory structure with Markdown logs)
-**Last Modification:** Phase 6 complete (3/3 tasks) - Manager Agent 3
+**Last Modification:** Phase 7 expanded with Tasks 7.4-7.8 (animation, missing sections, ViewTransition, mobile review) - Manager Agent 4
 **Project Overview:** Rebuild the Chacal Estudio website as a high-fidelity Next.js App Router landing, implementing the Figma Make design pixel-close with atomic design, React Compiler, `next-intl` i18n (Spanish + English), strong SEO/JSON-LD, accessibility, legal pages, cookie banner, and a contact form powered by React Hook Form, Zod, Cloudflare Turnstile, and Resend. Deployment via AWS Amplify with Husky-enforced quality gates.
 
 ---
@@ -344,3 +344,71 @@
 1. **Amplify Connection:** Ensure Amplify is connected to the repository with build settings matching local scripts (`pnpm install`, `pnpm lint`, `pnpm build`).
 2. **Environment Variables:** Configure required env vars (`RESEND_API_KEY`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`) in Amplify's environment settings.
 3. **Production Deployment:** Deploy from `main`, validate the live site (all pages, contact flow), and document the deployment process and rollback strategy.
+
+---
+
+### Task 7.4 – IntroLoader Animation Rework │ Agent_Frontend_Architecture
+
+- **Objective:** Fix the IntroLoader animation to scale images DOWN (not up) at the end, animate VideoHeroSection entry from small to full size for smooth transition, and fix the cycling taglines with italic styling and left-to-center animation.
+- **Output:** Updated IntroLoader with: (1) images scaling down to diminutive size in final animation, (2) VideoHeroSection starting small and expanding to full screen, (3) working tagline cycling with italic text and left-to-center entry animation.
+- **Guidance:** The goal is to create a seamless visual connection between the loader exit and the hero entrance. Use Framer Motion for animations. Ensure the tagline interval is properly managed.
+
+1. **Fix Tagline Cycling:** Debug and fix the interval-based tagline cycling that's stuck on one text. Ensure proper state updates and interval cleanup.
+2. **Style Taglines:** Add italic styling to taglines and change animation from y-axis to x-axis (left-to-center entry).
+3. **Reverse Image Scale Animation:** Change the exit animation so images scale DOWN (become diminutive) instead of scaling up.
+4. **VideoHeroSection Entry Animation:** Add initial state where VideoHeroSection starts at diminutive scale, then animates to full size to seamlessly connect with the loader exit.
+5. **Coordinate Timing:** Ensure the loader exit and hero entrance animations overlap smoothly.
+
+---
+
+### Task 7.5 – Add MarqueeSection and FutureSection │ Agent_Frontend_Architecture
+
+- **Objective:** Implement the missing MarqueeSection (text banner) and FutureSection ("El futuro que construimos") from the Figma design, placing them in the correct positions on the homepage.
+- **Output:** Two new section components integrated into the homepage: MarqueeSection between HeroSection and MethodSection, FutureSection between MethodSection and ImpactSection. Full i18n support for both.
+- **Guidance:** Reference `landing-page-redesign-source/src/components/MarqueeSection.tsx` and `FutureSection.tsx` for design patterns. Adapt to use the project's design system, next-intl translations, and Framer Motion.
+
+1. **Create MarqueeSection:** Build an infinite scrolling text banner using CSS or Framer Motion animation. Use gradient background matching brand colors.
+2. **Create FutureSection:** Implement the "El futuro que construimos" section with text content and image, using the two-column grid layout from the reference.
+3. **Add Translations:** Add translation keys to `messages/es.json` and `messages/en.json` for both sections.
+4. **Integrate into Homepage:** Update `app/[locale]/page.tsx` to include both sections in the correct order.
+
+---
+
+### Task 7.6 – Entry Animations and Button Cursor Fix │ Agent_Frontend_Architecture
+
+- **Objective:** Add scroll-triggered entry animations to all sections for a modern, dynamic feel, and ensure all buttons have `cursor: pointer` styling.
+- **Output:** All homepage sections have staggered fade-in/slide-up animations on scroll. All buttons across the codebase have cursor pointer.
+- **Guidance:** Use Framer Motion's `useInView` hook for scroll-triggered animations. Apply consistent animation patterns (fade + slide). Check Button component and any inline button styles.
+
+1. **Audit Button Cursor:** Search codebase for all button elements and ensure `cursor-pointer` class or CSS is applied. Fix in Button atom and any inline usages.
+2. **Add Section Entry Animations:** Implement scroll-triggered animations for each section (HeroSection, MethodSection, ImpactSection, ServicesSection, etc.) using Framer Motion.
+3. **Stagger Child Animations:** For sections with multiple cards/items, add staggered reveal animations.
+4. **Verify Animation Timing:** Ensure animations feel smooth and don't interfere with user scrolling.
+
+---
+
+### Task 7.7 – React ViewTransition Implementation │ Agent_Frontend_Architecture
+
+- **Objective:** Implement React's `<ViewTransition>` component throughout the application, especially for the Projects section navigation, to create smooth page transitions.
+- **Output:** ViewTransition wrapper around key navigable elements. Smooth cross-fade or custom transitions between project cards and detail pages. Updated to React Canary if needed.
+- **Guidance:** ViewTransition is in React Canary. Verify React version supports it, upgrade if needed. Focus on Projects index → detail page transitions. Reference https://react.dev/reference/react/ViewTransition.
+
+1. **Verify/Upgrade React:** Check if current React 19.2.0 includes ViewTransition. If not, upgrade to React Canary.
+2. **Wrap Project Cards:** Add `<ViewTransition>` around project cards with appropriate names for shared element transitions.
+3. **Wrap Project Detail Content:** Add corresponding `<ViewTransition>` with matching names on project detail pages.
+4. **Add Global ViewTransition:** Consider wrapping page content for cross-page transitions.
+5. **Test Navigation:** Verify smooth transitions when navigating between projects.
+
+---
+
+### Task 7.8 – Mobile Responsiveness Review │ Agent_Frontend_Architecture
+
+- **Objective:** Comprehensive mobile responsiveness review across all pages, with special focus on Header breakpoints and burger menu behavior.
+- **Output:** All content displays correctly on mobile viewports. Header breakpoint optimized for when to show/hide nav vs burger menu. Burger menu fully functional across key scenarios.
+- **Guidance:** Test on common mobile viewports (375px, 390px, 414px). Review header at various widths to find optimal breakpoint. Test burger menu open/close, navigation, scroll behavior.
+
+1. **Header Breakpoint Analysis:** Review current header breakpoint for nav/burger toggle. Test at various widths to determine optimal breakpoint for shorter devices.
+2. **Burger Menu Testing:** Test burger menu open/close behavior, link navigation, scroll handling, and overlay dismissal.
+3. **Content Review:** Check all sections on mobile for overflow issues, text sizing, spacing, and touch target sizes.
+4. **Form Review:** Verify contact form is usable on mobile with proper input sizing and keyboard handling.
+5. **Document Findings:** Note any issues found and fixes applied.

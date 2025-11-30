@@ -120,10 +120,10 @@ export function Header({ className }: HeaderProps) {
           ))}
           
           {/* Language Switcher */}
-          <div className="relative">
+          <div className="relative cursor-pointer">
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+              className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm cursor-pointer"
               aria-expanded={isLangMenuOpen}
               aria-haspopup="true"
               aria-label={t("switchLanguage")}
@@ -158,7 +158,7 @@ export function Header({ className }: HeaderProps) {
           <Button 
             variant="default" 
             size="sm" 
-            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-6"
+            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-6 cursor-pointer"
             onClick={() => {
                 const element = document.getElementById('contact'); // Assuming contact section has id 'contact'
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
