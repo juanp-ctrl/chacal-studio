@@ -171,7 +171,7 @@ export function Header({ className }: HeaderProps) {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md"
+          className="md:hidden text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
@@ -208,7 +208,7 @@ export function Header({ className }: HeaderProps) {
             <button
               onClick={() => switchLocale('es')}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20",
+                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
                 locale === 'es' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
               )}
             >
@@ -217,7 +217,7 @@ export function Header({ className }: HeaderProps) {
             <button
               onClick={() => switchLocale('en')}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20",
+                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
                 locale === 'en' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
               )}
             >
