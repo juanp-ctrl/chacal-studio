@@ -105,7 +105,7 @@ export default async function PrivacyPage({ params }: PageProps) {
         {/* Content Section */}
         <section className="pb-24 px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12 space-y-12">
+            <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg p-8 sm:p-12 space-y-12">
               
               {/* Introduction */}
               <PolicySection title={t("intro.title")}>

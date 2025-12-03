@@ -79,6 +79,35 @@
   --pbt-earth: #95D5B2;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a3d; /* blue-darkest */
+    --foreground: #ffffff;
+    --card: #251e4a; /* blue-darker */
+    --card-foreground: #ffffff;
+    --popover: #251e4a;
+    --popover-foreground: #ffffff;
+    
+    /* Keep primary as brand blue but ensure text on it is white */
+    /* If primary is used for text, it might be hard to read on dark bg. */
+    /* So we often swap primary in dark mode to be lighter or keep it as brand color if contrast allows. */
+    /* Brand blue (#2F2E59) on dark blue (#1a1a3d) is low contrast. */
+    /* Ideally primary for TEXT should be light in dark mode. */
+    /* But primary for BUTTONS can be brand blue. */
+    /* Tailwind 'text-primary' uses this variable. */
+    /* So we should probably lighten it for dark mode if it's used for text. */
+    /* Let's set it to accent or white? Or maybe a lighter blue. */
+    /* But that changes button colors too. */
+    /* Better to leave primary as is and use 'dark:text-white' utility in components as planned. */
+    
+    --muted: #251e4a;
+    --muted-foreground: #9ca3af; /* gray-400 */
+    
+    --border: rgba(255, 255, 255, 0.15);
+    --input-background: #1a1a3d;
+  }
+}
+
 @theme inline {
   --font-heading: var(--font-family-heading);
   --font-body: var(--font-family-body);

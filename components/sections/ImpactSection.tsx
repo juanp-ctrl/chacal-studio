@@ -49,10 +49,10 @@ export function ImpactSection() {
         >
           <AnimatedText
             as="h2"
-            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary dark:text-white sm:text-4xl md:text-5xl"
             text={t("title")}
           />
-          <Text className="text-lg text-muted-foreground max-w-2xl">
+          <Text className="text-lg text-muted-foreground dark:text-white/80 max-w-2xl">
             {t("subtitle")}
           </Text>
         </motion.div>
@@ -76,7 +76,7 @@ export function ImpactSection() {
                     {t(`${impact.key}.title`)}
                   </Heading>
                 </div>
-                <Text className="text-lg leading-relaxed text-muted-foreground">
+                <Text className="text-lg leading-relaxed text-muted-foreground dark:text-white/80">
                   {t(`${impact.key}.description`)}
                 </Text>
               </div>

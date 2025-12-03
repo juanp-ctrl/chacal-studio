@@ -42,7 +42,7 @@ export function ServicesSection() {
           <AnimatedText
             text={t("title")}
             as="h2"
-            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary dark:text-white sm:text-4xl md:text-5xl"
           />
         </motion.div>
 

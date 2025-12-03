@@ -45,10 +45,10 @@ export function MethodSection() {
           <AnimatedText
             text={t("title")}
             as="h2"
-            className="mb-6 text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+            className="mb-6 text-3xl font-medium tracking-tight text-primary dark:text-white sm:text-4xl md:text-5xl"
             delay={0.3}
           />
-          <Text className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          <Text className="mx-auto max-w-2xl text-lg text-muted-foreground dark:text-white/80">
             {t("description")}
           </Text>
         </motion.div>

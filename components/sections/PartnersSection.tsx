@@ -42,7 +42,7 @@ export function PartnersSection() {
           <AnimatedText
             text={t("title")}
             as="h2"
-            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary dark:text-white sm:text-4xl md:text-5xl"
           />
           <Text className="text-muted-foreground dark:text-white/80 text-lg sm:text-xl max-w-3xl mx-auto font-light leading-relaxed">
             {t("subtitle")}
