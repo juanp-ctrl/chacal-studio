@@ -62,18 +62,18 @@ export function MethodSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={cn(
-                "group relative flex flex-col items-start rounded-2xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                "group relative flex flex-col items-start rounded-2xl border-none bg-primary p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
               )}
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 text-white transition-colors group-hover:bg-white/20">
                 <step.icon className="h-7 w-7" strokeWidth={1.5} />
               </div>
               
-              <Heading as="h3" className="mb-3 text-xl font-semibold text-primary">
+              <Heading as="h3" className="mb-3 text-xl font-semibold text-white">
                 {t(`${step.key}.title`)}
               </Heading>
               
-              <Text className="text-sm leading-relaxed text-muted-foreground">
+              <Text className="text-sm leading-relaxed text-white/90">
                 {t(`${step.key}.description`)}
               </Text>
             </motion.div>
