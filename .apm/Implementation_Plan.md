@@ -1,7 +1,7 @@
 # Chacal Estudio Website – Implementation Plan
 
 **Memory Strategy:** Dynamic-MD (directory structure with Markdown logs)
-**Last Modification:** Phase 8 added with UI/UX enhancements (Lighthouse, custom cursor, animations, menu transitions, method cards) - Manager Agent 6
+**Last Modification:** Phase 9 added as Maintainability & Bug Fixing phase with 4 initial tasks (project pages 500 error, contact button hover, Open Graph, dark mode contrast) - Manager Agent 7
 **Project Overview:** Rebuild the Chacal Estudio website as a high-fidelity Next.js App Router landing, implementing the Figma Make design pixel-close with atomic design, React Compiler, `next-intl` i18n (Spanish + English), strong SEO/JSON-LD, accessibility, legal pages, cookie banner, and a contact form powered by React Hook Form, Zod, Cloudflare Turnstile, and Resend. Deployment via AWS Amplify with Husky-enforced quality gates.
 
 ---
@@ -484,3 +484,64 @@
 3. **Icon Styling:** Adjust icon colors and backgrounds to work with the dark card background.
 4. **Hover States:** Update hover effects to provide visual feedback on the primary background.
 5. **Accessibility Check:** Verify color contrast meets WCAG standards for the new color scheme.
+
+---
+
+## Phase 9: Maintainability & Bug Fixing
+
+> **Note:** This is an ongoing maintenance phase. Tasks will be added as bugs are discovered or improvements are needed. The phase remains open until a new major feature phase is required.
+
+### Task 9.1 – Fix Project Pages 500 Error in Production │ Agent_Frontend_Architecture
+
+- **Objective:** Fix the critical DYNAMIC_SERVER_USAGE error causing 500 Internal Server Error on project detail pages (`/projects/[slug]`) in production builds.
+- **Output:** Project detail pages render correctly in production mode (`pnpm build && pnpm start`); no 500 errors; proper static generation.
+- **Guidance:** The error `digest: 'DYNAMIC_SERVER_USAGE'` indicates a server component is using dynamic APIs (cookies, headers, searchParams) that prevent static generation. Investigate the project detail page and its dependencies. Ensure `generateStaticParams` is properly implemented.
+
+1. **Diagnose Error:** Run `pnpm build` and check build output for errors. Test `pnpm start` and navigate to project pages to reproduce the issue.
+2. **Identify Dynamic Usage:** Search for dynamic API usage in project page and imported components (`cookies()`, `headers()`, `useSearchParams()`, `next-intl` dynamic features).
+3. **Fix Static Generation:** Ensure project pages can be statically generated. May require moving dynamic APIs to client components or using proper configuration.
+4. **Verify Fix:** Run `pnpm build && pnpm start` and confirm all project pages load without 500 errors.
+5. **Git Commit:** `git add -A && git commit -m "fix(task-9.1): resolve project pages 500 error in production"`
+
+---
+
+### Task 9.2 – Fix Contact Section Button Hover Logo Visibility │ Agent_Frontend_Architecture
+
+- **Objective:** Fix the issue where logos in the Contact section disappear when hovering over the contact button (logos turn the same color as the orange background).
+- **Output:** Contact section logos remain visible during button hover states; consistent behavior with Footer logos.
+- **Guidance:** Compare `ContactSection.tsx` logo implementation with `Footer.tsx` which works correctly. The issue is likely related to CSS color inheritance or icon fill colors during hover states.
+
+1. **Reproduce Issue:** Identify the exact hover behavior causing logo disappearance in Contact section.
+2. **Compare Implementations:** Review Footer logos (which work correctly) vs Contact section logos.
+3. **Fix Color Handling:** Update logo/icon colors to prevent inheritance issues during hover states.
+4. **Verify Fix:** Test hover states on contact button and confirm logos remain visible.
+5. **Git Commit:** `git add -A && git commit -m "fix(task-9.2): fix contact section logo visibility on button hover"`
+
+---
+
+### Task 9.3 – Implement Open Graph for Social Sharing │ Agent_Frontend_Architecture
+
+- **Objective:** Implement proper Open Graph metadata for rich social sharing previews using `chacal-paisaje.webp` for Twitter cards and `logo.webp` for WhatsApp/other platforms.
+- **Output:** Twitter Card displays `chacal-paisaje.webp` landscape image; WhatsApp and other platforms display `logo.webp`; proper locale-aware titles and descriptions.
+- **Guidance:** Use Next.js metadata API with `openGraph` and `twitter` properties. Twitter prefers large landscape images (summary_large_image), WhatsApp uses og:image. May need different images for different platforms.
+
+1. **Review Current Metadata:** Check existing Open Graph implementation in `app/[locale]/layout.tsx` and page components.
+2. **Configure Twitter Card:** Set up Twitter metadata with `card: 'summary_large_image'` using `chacal-paisaje.webp` (landscape image).
+3. **Configure Open Graph:** Set up og:image with `logo.webp` for WhatsApp and general social sharing.
+4. **Add Image Metadata:** Ensure images have proper dimensions, alt text, and absolute URLs.
+5. **Test Sharing:** Use social media debuggers (Twitter Card Validator, Facebook Sharing Debugger) to verify previews.
+6. **Git Commit:** `git add -A && git commit -m "feat(task-9.3): implement Open Graph for social sharing"`
+
+---
+
+### Task 9.4 – Fix Dark Mode Text Contrast │ Agent_Frontend_Architecture
+
+- **Objective:** Fix text contrast issues when device has dark mode enabled - sections with white backgrounds correctly change to black, but text remains blue which has no contrast on black backgrounds.
+- **Output:** Text in white-background sections adapts to white color when dark mode is active; proper contrast maintained across all color schemes.
+- **Guidance:** Use Tailwind's `dark:` variant to apply `dark:text-white` or appropriate contrast colors. Review all sections that have white backgrounds to ensure text adapts. Consider using CSS custom properties for easier theme management.
+
+1. **Identify Affected Sections:** Find all sections with white/light backgrounds where text uses brand blue.
+2. **Add Dark Mode Variants:** Apply `dark:text-white` or appropriate dark mode text colors to affected text elements.
+3. **Test Dark Mode:** Enable system dark mode and verify all text has sufficient contrast.
+4. **Consistency Check:** Ensure dark mode behavior is consistent across all pages and sections.
+5. **Git Commit:** `git add -A && git commit -m "fix(task-9.4): fix dark mode text contrast issues"`
