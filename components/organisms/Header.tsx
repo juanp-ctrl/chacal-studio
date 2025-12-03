@@ -8,10 +8,56 @@ import { useTranslations, useLocale } from "next-intl";
 import { Logo } from "@/components/atoms/Logo";
 import { Button } from "@/components/atoms/Button";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence, Variants } from "motion/react";
 
 interface HeaderProps {
   className?: string;
 }
+
+const menuVariants: Variants = {
+  initial: {
+    x: "100%",
+  },
+  animate: {
+    x: "0%",
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+  exit: {
+    x: "100%",
+    transition: {
+      duration: 0.3,
+      ease: "easeIn",
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+      when: "afterChildren",
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  initial: { x: 50, opacity: 0 },
+  animate: { 
+    x: 0, 
+    opacity: 1, 
+    transition: { 
+      type: "spring", 
+      stiffness: 300, 
+      damping: 30 
+    } 
+  },
+  exit: { 
+    x: 50, 
+    opacity: 0, 
+    transition: { 
+      duration: 0.2 
+    } 
+  },
+};
 
 export function Header({ className }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -193,78 +239,89 @@ export function Header({ className }: HeaderProps) {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 z-[60] bg-(--brand-blue) lg:hidden transition-transform duration-300 ease-in-out flex flex-col h-screen w-screen",
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            key="mobile-menu"
+            className={cn(
+              "fixed inset-0 z-[60] bg-(--brand-blue) lg:hidden flex flex-col h-screen w-screen"
+            )}
+            variants={menuVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t("menu")}
+          >
+            {/* Close Button Header */}
+            <div className={cn(
+              "container mx-auto px-4 md:px-6 flex items-center justify-end w-full shrink-0",
+              "py-5"
+            )}>
+              <button
+                className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer z-[70] relative"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <nav className="flex flex-col items-center justify-center gap-6 w-full px-8 flex-1 -mt-20">
+              {navLinks.map((link) => (
+                <motion.div key={link.href} variants={itemVariants} className="w-full text-center">
+                  <Link
+                    href={link.href}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavigation(e, link.href, link.type)}
+                    className="text-xl font-medium text-white hover:text-accent transition-colors block"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              {/* Mobile Language Switcher */}
+              <motion.div variants={itemVariants} className="flex gap-4 mt-4">
+                <button
+                  onClick={() => switchLocale('es')}
+                  className={cn(
+                    "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
+                    locale === 'es' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
+                  )}
+                >
+                  Español
+                </button>
+                <button
+                  onClick={() => switchLocale('en')}
+                  className={cn(
+                    "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
+                    locale === 'en' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
+                  )}
+                >
+                  English
+                </button>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="w-full max-w-xs mt-4">
+                <Button 
+                  variant="default" 
+                  size="lg" 
+                  className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-8 w-full cursor-pointer"
+                  onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) element.scrollIntoView({ behavior: 'smooth' });
+                      else if (pathname !== '/') router.push('/#contact');
+                      setIsMobileMenuOpen(false);
+                  }}
+                >
+                  {t('contact')}
+                </Button>
+              </motion.div>
+            </nav>
+          </motion.div>
         )}
-        role="dialog"
-        aria-modal="true"
-        aria-label={t("menu")}
-      >
-        {/* Close Button Header */}
-        <div className={cn(
-          "container mx-auto px-4 md:px-6 flex items-center justify-end w-full shrink-0",
-          "py-5"
-        )}>
-          <button
-            className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer z-[70] relative"
-            onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
-        </div>
-
-        <nav className="flex flex-col items-center justify-center gap-6 w-full px-8 flex-1 -mt-20">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavigation(e, link.href, link.type)}
-              className="text-xl font-medium text-white hover:text-accent transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-          
-          {/* Mobile Language Switcher */}
-          <div className="flex gap-4 mt-4">
-            <button
-              onClick={() => switchLocale('es')}
-              className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
-                locale === 'es' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
-              )}
-            >
-              Español
-            </button>
-            <button
-              onClick={() => switchLocale('en')}
-              className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
-                locale === 'en' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
-              )}
-            >
-              English
-            </button>
-          </div>
-
-          <Button 
-            variant="default" 
-            size="lg" 
-            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-8 w-full max-w-xs mt-4"
-            onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-                else if (pathname !== '/') router.push('/#contact');
-                setIsMobileMenuOpen(false);
-            }}
-          >
-            {t('contact')}
-          </Button>
-        </nav>
-      </div>
+      </AnimatePresence>
     </header>
   );
 }
