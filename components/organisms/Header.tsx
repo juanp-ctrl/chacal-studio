@@ -208,7 +208,7 @@ export function Header({ className }: HeaderProps) {
           isScrolled ? "py-3" : "py-5"
         )}>
           <button
-            className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer"
+            className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer z-[70] relative"
             onClick={() => setIsMobileMenuOpen(false)}
             aria-label="Close menu"
           >
