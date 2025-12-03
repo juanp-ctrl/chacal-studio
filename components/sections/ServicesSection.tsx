@@ -5,6 +5,7 @@ import { Compass, MessageCircle, Search, Settings, Leaf } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
+import { AnimatedText } from "../atoms/AnimatedText";
 
 export function ServicesSection() {
   const t = useTranslations("services");
@@ -38,12 +39,11 @@ export function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Heading
+          <AnimatedText
+            text={t("title")}
             as="h2"
-            className="mb-6 text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
-          >
-            {t("title")}
-          </Heading>
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+          />
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-20">

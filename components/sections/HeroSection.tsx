@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { AnimatedText } from "@/components/atoms/AnimatedText";
-import { Text } from "@/components/atoms/Text";
 import { Button } from "@/components/atoms/Button";
 
 export function HeroSection() {
@@ -47,12 +46,12 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <Text
-            className="mx-auto mb-16 max-w-3xl text-base font-light leading-relaxed text-white/90 sm:text-lg md:text-xl"
+          <AnimatedText
+            text={t("subtitle")}
             as="p"
-          >
-            {t("subtitle")}
-          </Text>
+            className="mx-auto mb-16 max-w-3xl text-base font-light leading-relaxed text-white/90 sm:text-lg md:text-xl"
+            delay={0.5}
+          />
         </motion.div>
 
         <motion.div

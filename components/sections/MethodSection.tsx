@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { 
@@ -15,6 +14,7 @@ import {
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
 import { cn } from "@/lib/utils";
+import { AnimatedText } from "../atoms/AnimatedText";
 
 export function MethodSection() {
   const t = useTranslations("method");
@@ -42,12 +42,12 @@ export function MethodSection() {
           transition={{ duration: 0.8 }}
           className="mb-20 text-center"
         >
-          <Heading
+          <AnimatedText
+            text={t("title")}
             as="h2"
             className="mb-6 text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
-          >
-            {t("title")}
-          </Heading>
+            delay={0.3}
+          />
           <Text className="mx-auto max-w-2xl text-lg text-muted-foreground">
             {t("description")}
           </Text>

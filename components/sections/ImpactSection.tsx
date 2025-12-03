@@ -49,7 +49,7 @@ export function ImpactSection() {
         >
           <AnimatedText
             as="h2"
-            className="mb-6 text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
             text={t("title")}
           />
           <Text className="text-lg text-muted-foreground max-w-2xl">

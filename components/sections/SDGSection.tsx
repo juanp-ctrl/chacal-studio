@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
+import { AnimatedText } from "../atoms/AnimatedText";
 
 const sdgColors = ['#EF402D', '#A31C44', '#F99D26', '#CF8D2A', '#48773E'];
 
@@ -43,12 +44,11 @@ export function SDGSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Heading
+          <AnimatedText
+            text={t("title")}
             as="h2"
-            className="mb-6 text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl"
-          >
-            {t("title")}
-          </Heading>
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-white sm:text-4xl md:text-5xl"
+          />
           <Text className="text-white/80 text-lg sm:text-xl max-w-3xl mx-auto font-light leading-relaxed">
             {t("subtitle")}
           </Text>

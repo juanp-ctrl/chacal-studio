@@ -5,6 +5,7 @@ import Image from "next/image";
 import * as motion from "motion/react-client"
 import { useRef } from 'react';
 import { useInView } from 'motion/react';
+import { AnimatedText } from '../atoms/AnimatedText';
 
 export function FutureSection() {
   const ref = useRef(null);
@@ -20,9 +21,12 @@ export function FutureSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-white mb-6 tracking-tight capitalize font-serif text-3xl sm:text-4xl">
-              {t('title')}
-            </h2>
+            <AnimatedText
+              text={t("title")}
+              as="h2"
+              className="mb-6 text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl font-serif"
+              delay={0.3}
+            />
             <div className="space-y-4 text-white/90 text-lg font-light leading-relaxed">
               <p>{t('p1')}</p>
               <p>{t('p2')}</p>
