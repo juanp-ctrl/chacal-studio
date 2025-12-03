@@ -12,7 +12,13 @@ export function MarqueeSection() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-accent/80 py-12 sm:py-16">
-      <div className="relative">
+      <motion.div 
+        className="relative"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <motion.div
           className="flex whitespace-nowrap"
           animate={{
@@ -34,7 +40,7 @@ export function MarqueeSection() {
             </span>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

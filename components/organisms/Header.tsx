@@ -136,7 +136,7 @@ export function Header({ className }: HeaderProps) {
                 <button
                   onClick={() => switchLocale('es')}
                   className={cn(
-                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800",
+                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800 cursor-pointer",
                     locale === 'es' && "font-bold bg-gray-50"
                   )}
                 >
@@ -145,7 +145,7 @@ export function Header({ className }: HeaderProps) {
                 <button
                   onClick={() => switchLocale('en')}
                   className={cn(
-                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800",
+                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800 cursor-pointer",
                     locale === 'en' && "font-bold bg-gray-50"
                   )}
                 >
