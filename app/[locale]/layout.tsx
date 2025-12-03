@@ -61,6 +61,33 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "es" ? "es_AR" : "en_US",
       siteName: "Chacal Estudio",
+      title: locale === "es" ? "Chacal Estudio" : "Chacal Studio",
+      description: locale === "es" 
+        ? "Estudio de comunicación y diseño con propósito desde la Patagonia." 
+        : "Purpose-driven communication and design studio from Patagonia.",
+      images: [
+        {
+          url: "/logo.webp",
+          width: 600,
+          height: 600,
+          alt: "Chacal Estudio",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "es" ? "Chacal Estudio" : "Chacal Studio",
+      description: locale === "es" 
+        ? "Estudio de comunicación y diseño con propósito desde la Patagonia." 
+        : "Purpose-driven communication and design studio from Patagonia.",
+      images: [
+        {
+          url: "/chacal-paisaje-.webp",
+          width: 2435,
+          height: 1350,
+          alt: "Chacal Estudio - Paisaje",
+        },
+      ],
     },
   };
 }

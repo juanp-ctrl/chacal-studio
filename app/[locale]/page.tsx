@@ -80,11 +80,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: locale === "es" ? "es_AR" : "en_US",
       alternateLocale: locale === "es" ? "en_US" : "es_AR",
       type: "website",
+      images: [
+        {
+          url: "/logo.webp",
+          width: 600,
+          height: 600,
+          alt: "Chacal Estudio",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [
+        {
+          url: "/chacal-paisaje-.webp",
+          width: 2435,
+          height: 1350,
+          alt: "Chacal Estudio - Paisaje",
+        },
+      ],
     },
   };
 }

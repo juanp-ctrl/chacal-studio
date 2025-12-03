@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const LOADER_IMAGES = [
@@ -14,6 +13,7 @@ const LOADER_IMAGES = [
   'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800', // Energía Limpia
   'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800', // Patagonia mountains
 ];
+
 
 const SESSION_KEY = 'chacal-intro-seen';
 
@@ -31,18 +31,12 @@ const shouldShowIntro = (): boolean => {
 };
 
 export function IntroLoader() {
-  const t = useTranslations('IntroLoader');
   const initializedRef = useRef(false);
-  const taglineCycleRef = useRef<NodeJS.Timeout | null>(null);
   
   const [showLoader, setShowLoader] = useState(false);
   const [visibleImages, setVisibleImages] = useState<number[]>([]);
-  const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
   const [isExpanding, setIsExpanding] = useState(false);
-  const [textExiting, setTextExiting] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(0);
-
-  const taglines = [t('tagline1'), t('tagline2')];
 
   // Initialize visibility on mount (runs once)
   useEffect(() => {
@@ -84,48 +78,24 @@ export function IntroLoader() {
     return () => imageTimers.forEach(clearTimeout);
   }, [showLoader, imagesLoaded]);
 
-  // Tagline cycling - separate effect with explicit interval management
-  useEffect(() => {
-    if (!showLoader || visibleImages.length < 3 || textExiting) {
-      if (taglineCycleRef.current) {
-        clearInterval(taglineCycleRef.current);
-        taglineCycleRef.current = null;
-      }
-      return;
-    }
-
-    // Start cycling taglines
-    taglineCycleRef.current = setInterval(() => {
-      setCurrentTaglineIndex((prev) => (prev + 1) % taglines.length);
-    }, 300);
-
-    return () => {
-      if (taglineCycleRef.current) {
-        clearInterval(taglineCycleRef.current);
-        taglineCycleRef.current = null;
-      }
-    };
-  }, [showLoader, visibleImages.length, textExiting, taglines.length]);
-
   // Final expansion and exit sequence
   useEffect(() => {
     if (visibleImages.length !== LOADER_IMAGES.length) return;
 
     // Wait a moment after last image, then start expansion
     const expansionTimer = setTimeout(() => {
-      setTextExiting(true);
       setIsExpanding(true);
       if (typeof window !== 'undefined') {
         window.dispatchEvent(new CustomEvent('intro-exit-start'));
       }
-    }, 1200);
+    }, 1100);
 
     // Fade out loader completely
     const exitTimer = setTimeout(() => {
       setShowLoader(false);
       sessionStorage.setItem(SESSION_KEY, 'true');
       document.body.style.overflow = '';
-    }, 2200);
+    }, 2700);
 
     return () => {
       clearTimeout(expansionTimer);
@@ -137,9 +107,6 @@ export function IntroLoader() {
   useEffect(() => {
     return () => {
       document.body.style.overflow = '';
-      if (taglineCycleRef.current) {
-        clearInterval(taglineCycleRef.current);
-      }
     };
   }, []);
 
@@ -158,28 +125,6 @@ export function IntroLoader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
         >
-          {/* Top Text - "Comunicando lo humano" */}
-          <motion.h1
-            className="absolute text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif tracking-tight z-20 px-4 text-center italic"
-            style={{
-              fontFamily: 'var(--font-family-heading)',
-              top: '10%',
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{
-              opacity: textExiting ? 0 : 1,
-              y: 0,
-              x: textExiting ? '-100vw' : 0,
-            }}
-            transition={{
-              opacity: { duration: 0.6, delay: 0.2 },
-              y: { duration: 0.8, delay: 0.2, ease: 'easeOut' },
-              x: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
-            }}
-          >
-            {t('headline')}
-          </motion.h1>
-
           {/* Image Stack Container */}
           <div className="relative flex items-center justify-center w-full h-full">
             {visibleImages.map((imageIndex) => {
@@ -189,24 +134,24 @@ export function IntroLoader() {
               return (
                 <motion.div
                   key={imageIndex}
-                  className="absolute rounded-lg overflow-hidden shadow-2xl"
+                  className="absolute rounded-sm overflow-hidden shadow-2xl"
                   style={{
-                    // Square 300x300 on desktop, smaller on mobile
-                    width: 'clamp(200px, 35vw, 300px)',
-                    height: 'clamp(200px, 35vw, 300px)',
+                    // Square 500x500 on desktop, smaller on mobile
+                    width: 'clamp(500px, 35vw, 500px)',
+                    height: 'clamp(500px, 35vw, 500px)',
                     willChange: 'transform',
                     zIndex: imageIndex + 1,
                   }}
                   initial={{ opacity: 0, scale: 0.8, y: 50 }}
                   animate={{
-                    opacity: isExpanding ? 0 : 1,
-                    scale: isExpanding ? 0.3 : scale,
+                    opacity: isExpanding ? (isLastImage ? 1 : 0) : 1,
+                    scale: isExpanding ? (isLastImage ? 1.9 : 1) : scale,
                     y: 0,
                   }}
                   transition={{
-                    opacity: { duration: isExpanding ? 0.6 : 0.4, ease: 'easeOut' },
+                    opacity: { duration: isExpanding ? 0.3 : 0.4, ease: 'easeOut' },
                     scale: {
-                      duration: isExpanding ? 1 : 0.5,
+                      duration: isExpanding ? 1.5 : 0.5,
                       ease: isExpanding ? [0.25, 0.1, 0.25, 1] : 'easeOut',
                     },
                     y: { duration: 0.5, ease: 'easeOut' },
@@ -224,35 +169,6 @@ export function IntroLoader() {
               );
             })}
           </div>
-
-          {/* Bottom Text - Cycling taglines */}
-          <motion.div
-            className="absolute z-20"
-            style={{ bottom: '12%' }}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: textExiting ? 0 : visibleImages.length >= 3 ? 1 : 0,
-              x: textExiting ? '100vw' : 0,
-            }}
-            transition={{
-              opacity: { duration: 0.4 },
-              x: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
-            }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={currentTaglineIndex}
-                className="text-white/80 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-center px-4 italic"
-                style={{ fontFamily: 'var(--font-family-body)' }}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 50 }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
-              >
-                {taglines[currentTaglineIndex]}
-              </motion.p>
-            </AnimatePresence>
-          </motion.div>
 
           {/* Loading indicator while images preload */}
           {imagesLoaded < LOADER_IMAGES.length && (

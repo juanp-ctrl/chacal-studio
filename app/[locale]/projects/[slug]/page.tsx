@@ -93,22 +93,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: locale === "es" ? "es_AR" : "en_US",
       alternateLocale: locale === "es" ? "en_US" : "es_AR",
       type: "article",
-      images: project.thumbnail
-        ? [
-            {
-              url: project.thumbnail,
-              width: 1200,
-              height: 630,
-              alt: localizedTitle,
-            },
-          ]
-        : [],
+      ...(project.thumbnail
+        ? {
+            images: [
+              {
+                url: project.thumbnail,
+                width: 1200,
+                height: 630,
+                alt: localizedTitle,
+              },
+            ],
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: project.thumbnail ? [project.thumbnail] : [],
+      ...(project.thumbnail ? { images: [project.thumbnail] } : {}),
     },
   };
 }
