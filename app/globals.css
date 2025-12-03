@@ -146,12 +146,26 @@
     font-family: var(--font-family-body);
   }
 
+  html {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: var(--font-family-body);
+    /* Prevent horizontal scroll from animations/decorative elements */
+    overflow-x: hidden;
+    max-width: 100vw;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-heading);
+  }
+}
+
+/* Custom Cursor - Hide default cursor on desktop/fine pointer devices */
+@media (pointer: fine) {
+  body, a, button, input, textarea, select, [role="button"] {
+    cursor: none !important;
   }
 }

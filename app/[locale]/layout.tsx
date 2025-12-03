@@ -6,8 +6,11 @@ import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
 import { CookieBanner } from "@/components/organisms/CookieBanner";
 import { IntroLoader } from "@/components/organisms/IntroLoader";
+import { FloatingActions } from "@/components/organisms/FloatingActions";
+import { CustomCursor } from "@/components/organisms/CustomCursor";
 import "../globals.css"; 
 import { Crimson_Text, DM_Sans, Alex_Brush } from "next/font/google";
+import type { Metadata } from "next";
 
 const crimsonText = Crimson_Text({
   subsets: ["latin"],
@@ -30,7 +33,33 @@ const alexBrush = Alex_Brush({
   display: "swap",
 });
 
-// Metadata is now handled per-page via generateMetadata
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    metadataBase: new URL("https://chacalestudio.ar"),
+    title: {
+      template: `%s | Chacal Estudio`,
+      default: "Chacal Estudio",
+    },
+    description: locale === "es" 
+      ? "Estudio de comunicación y diseño con propósito desde la Patagonia." 
+      : "Purpose-driven communication and design studio from Patagonia.",
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "es" ? "es_AR" : "en_US",
+      siteName: "Chacal Estudio",
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -56,6 +85,7 @@ export default async function LocaleLayout({
       <body className="antialiased bg-background text-foreground font-body">
         <NextIntlClientProvider messages={messages}>
           <IntroLoader />
+          <CustomCursor />
           <a 
             href="#main-content" 
             className="sr-only focus:not-sr-only focus:absolute focus:z-60 focus:top-4 focus:left-4 focus:p-4 focus:bg-white focus:text-(--brand-blue) focus:rounded-md focus:shadow-lg"
@@ -70,6 +100,7 @@ export default async function LocaleLayout({
           </main>
           
           <Footer />
+          <FloatingActions />
           <CookieBanner />
         </NextIntlClientProvider>
       </body>

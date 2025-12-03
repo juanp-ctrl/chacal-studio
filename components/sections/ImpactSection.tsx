@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Users, Heart, Globe } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { AnimatedText } from "@/components/atoms/AnimatedText";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
 import { cn } from "@/lib/utils";
@@ -46,12 +47,11 @@ export function ImpactSection() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <Heading
+          <AnimatedText
             as="h2"
-            className="mb-6 text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
-          >
-            {t("title")}
-          </Heading>
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+            text={t("title")}
+          />
           <Text className="text-lg text-muted-foreground max-w-2xl">
             {t("subtitle")}
           </Text>

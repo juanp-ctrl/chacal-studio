@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Special brand variants
         brand: "bg-blue-dark text-white hover:bg-blue-dark/90",
-        accent: "bg-accent text-white hover:bg-accent/90",
+        accent: "bg-accent text-[#2F2E59] hover:bg-accent/90",
       },
       size: {
         default: "h-9 px-4 py-2",

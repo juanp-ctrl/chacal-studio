@@ -5,6 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
+import { AnimatedText } from "../atoms/AnimatedText";
 
 export function PartnersSection() {
   const t = useTranslations("partners");
@@ -38,12 +39,11 @@ export function PartnersSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Heading
+          <AnimatedText
+            text={t("title")}
             as="h2"
-            className="mb-6 text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
-          >
-            {t("title")}
-          </Heading>
+            className="mb-6 text-3xl font-heading font-medium tracking-tight text-primary sm:text-4xl md:text-5xl"
+          />
           <Text className="text-muted-foreground dark:text-white/80 text-lg sm:text-xl max-w-3xl mx-auto font-light leading-relaxed">
             {t("subtitle")}
           </Text>
@@ -83,8 +83,11 @@ export function PartnersSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-accent transition-colors duration-300 group/link"
+                aria-label={`${t("learnMore")} ${t(`${partner.key}.name`)}`}
               >
-                {t("learnMore")}
+                <span>
+                  {t("learnMore")} <span className="sr-only">{t(`${partner.key}.name`)}</span>
+                </span>
                 <ExternalLink size={14} className="transition-transform duration-300 group-hover/link:translate-x-1" />
               </a>
             </motion.div>

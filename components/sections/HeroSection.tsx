@@ -2,8 +2,7 @@
 
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Heading } from "@/components/atoms/Heading";
-import { Text } from "@/components/atoms/Text";
+import { AnimatedText } from "@/components/atoms/AnimatedText";
 import { Button } from "@/components/atoms/Button";
 
 export function HeroSection() {
@@ -35,30 +34,24 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 mx-auto max-w-7xl px-6 py-32 text-center sm:px-8 sm:py-44 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <Heading
-            as="h1"
-            className="mb-12 text-4xl font-normal tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            {t("title")}
-          </Heading>
-        </motion.div>
+        <AnimatedText
+          text={t("title")}
+          as="h1"
+          className="mb-12 text-4xl font-normal tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          delay={0.3}
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <Text
-            className="mx-auto mb-16 max-w-3xl text-base font-light leading-relaxed text-white/90 sm:text-lg md:text-xl"
+          <AnimatedText
+            text={t("subtitle")}
             as="p"
-          >
-            {t("subtitle")}
-          </Text>
+            className="mx-auto mb-16 max-w-3xl text-base font-light leading-relaxed text-white/90 sm:text-lg md:text-xl"
+            delay={0.5}
+          />
         </motion.div>
 
         <motion.div
