@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
-import { Logo } from "@/components/atoms/Logo";
+import { LogoMinimal } from "@/components/atoms/LogoMinimal";
 import { cn } from "@/lib/utils";
 
 export const CustomCursor = () => {
@@ -108,7 +108,7 @@ export const CustomCursor = () => {
         }}
         className="w-8 h-8 flex items-center justify-center"
       >
-        <Logo className="text-white w-full h-full" />
+        <LogoMinimal className="text-white w-full h-full" />
       </motion.div>
     </motion.div>
   );
