@@ -1,6 +1,8 @@
 import { VideoHeroSection } from "@/components/sections/VideoHeroSection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { MarqueeSection } from "@/components/sections/MarqueeSection";
 import { MethodSection } from "@/components/sections/MethodSection";
+import { FutureSection } from "@/components/sections/FutureSection";
 import { ImpactSection } from "@/components/sections/ImpactSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { PlantBasedTreatySection } from "@/components/sections/PlantBasedTreatySection";
@@ -99,7 +101,7 @@ export default async function Home({ params }: PageProps) {
     name: "Chacal Estudio",
     alternateName: "Chacal Studio",
     url: baseUrl,
-    logo: `${baseUrl}/logo.png`,
+    logo: `${baseUrl}/logo.webp`,
     description:
       locale === "es"
         ? "Estudio de comunicación y diseño con propósito desde la Patagonia argentina"
@@ -163,7 +165,9 @@ export default async function Home({ params }: PageProps) {
       <div className="flex min-h-screen flex-col">
         <VideoHeroSection />
         <HeroSection />
+        <MarqueeSection />
         <MethodSection />
+        <FutureSection />
         <ImpactSection />
         <ServicesSection />
         <PlantBasedTreatySection />

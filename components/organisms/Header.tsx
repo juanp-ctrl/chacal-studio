@@ -31,6 +31,18 @@ export function Header({ className }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   // Close mobile menu on route change
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -106,7 +118,7 @@ export function Header({ className }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8" role="navigation">
+        <nav className="hidden lg:flex items-center gap-8" role="navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -120,10 +132,10 @@ export function Header({ className }: HeaderProps) {
           ))}
           
           {/* Language Switcher */}
-          <div className="relative">
+          <div className="relative cursor-pointer">
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+              className="flex items-center gap-2 text-white/90 hover:text-accent transition-colors text-sm font-medium uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm cursor-pointer"
               aria-expanded={isLangMenuOpen}
               aria-haspopup="true"
               aria-label={t("switchLanguage")}
@@ -136,7 +148,7 @@ export function Header({ className }: HeaderProps) {
                 <button
                   onClick={() => switchLocale('es')}
                   className={cn(
-                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800",
+                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800 cursor-pointer",
                     locale === 'es' && "font-bold bg-gray-50"
                   )}
                 >
@@ -145,7 +157,7 @@ export function Header({ className }: HeaderProps) {
                 <button
                   onClick={() => switchLocale('en')}
                   className={cn(
-                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800",
+                    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 text-gray-800 cursor-pointer",
                     locale === 'en' && "font-bold bg-gray-50"
                   )}
                 >
@@ -158,7 +170,7 @@ export function Header({ className }: HeaderProps) {
           <Button 
             variant="default" 
             size="sm" 
-            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-6"
+            className="bg-accent hover:bg-(--accent)/90 text-white rounded-full px-6 cursor-pointer"
             onClick={() => {
                 const element = document.getElementById('contact'); // Assuming contact section has id 'contact'
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -171,27 +183,40 @@ export function Header({ className }: HeaderProps) {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          className="lg:hidden text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="Open menu"
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <Menu size={24} />
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-(--brand-blue) md:hidden transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-8",
+          "fixed inset-0 z-[60] bg-(--brand-blue) lg:hidden transition-transform duration-300 ease-in-out flex flex-col h-screen w-screen",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
-        style={{ top: "0", paddingTop: "80px" }}
         role="dialog"
         aria-modal="true"
         aria-label={t("menu")}
       >
-        <nav className="flex flex-col items-center gap-6 w-full px-8">
+        {/* Close Button Header */}
+        <div className={cn(
+          "container mx-auto px-4 md:px-6 flex items-center justify-end w-full shrink-0",
+          "py-5"
+        )}>
+          <button
+            className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer z-[70] relative"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        <nav className="flex flex-col items-center justify-center gap-6 w-full px-8 flex-1 -mt-20">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -208,7 +233,7 @@ export function Header({ className }: HeaderProps) {
             <button
               onClick={() => switchLocale('es')}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20",
+                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
                 locale === 'es' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
               )}
             >
@@ -217,7 +242,7 @@ export function Header({ className }: HeaderProps) {
             <button
               onClick={() => switchLocale('en')}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20",
+                "px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20 cursor-pointer",
                 locale === 'en' ? "bg-accent text-white border-accent" : "text-white hover:bg-white/10"
               )}
             >

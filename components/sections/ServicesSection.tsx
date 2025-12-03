@@ -50,19 +50,19 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <motion.div
               key={service.key}
-              className="group rounded-3xl border border-transparent bg-white p-10 transition-all duration-300 hover:border-accent/20 dark:bg-primary/40"
+              className="group rounded-3xl border border-transparent bg-primary p-10 transition-all duration-300 hover:border-accent/20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 transition-all duration-300 group-hover:bg-accent/10 dark:bg-white/5">
-                <service.icon className="h-7 w-7 text-primary transition-colors duration-300 group-hover:text-accent dark:text-white" strokeWidth={1.5} />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 transition-all duration-300 group-hover:bg-accent/10">
+                <service.icon className="h-7 w-7 text-white transition-colors duration-300 group-hover:text-accent" strokeWidth={1.5} />
               </div>
-              <Heading as="h3" className="mb-4 text-2xl font-bold text-primary dark:text-white">
+              <Heading as="h3" className="mb-4 text-2xl font-bold text-white">
                 {t(`${service.key}.title`)}
               </Heading>
-              <Text className="font-light leading-relaxed text-primary/70 dark:text-white/70">
+              <Text className="font-light leading-relaxed text-white/70">
                 {t(`${service.key}.description`)}
               </Text>
             </motion.div>

@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Heading } from "@/components/atoms/Heading";
@@ -20,7 +19,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-(--brand-blue)"
+      className="relative flex items-center justify-center overflow-hidden bg-(--brand-blue)"
     >
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 z-0 opacity-5">
