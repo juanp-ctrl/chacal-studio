@@ -195,7 +195,7 @@ export function Header({ className }: HeaderProps) {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-[60] bg-(--brand-blue) md:hidden transition-transform duration-300 ease-in-out flex flex-col",
+          "fixed inset-0 z-[60] bg-(--brand-blue) md:hidden transition-transform duration-300 ease-in-out flex flex-col h-screen w-screen",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         role="dialog"
@@ -204,8 +204,8 @@ export function Header({ className }: HeaderProps) {
       >
         {/* Close Button Header */}
         <div className={cn(
-          "container mx-auto px-4 md:px-6 flex items-center justify-end w-full",
-          isScrolled ? "py-3" : "py-5"
+          "container mx-auto px-4 md:px-6 flex items-center justify-end w-full shrink-0",
+          "py-5"
         )}>
           <button
             className="text-white p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md cursor-pointer z-[70] relative"
