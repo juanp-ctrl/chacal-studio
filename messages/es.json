@@ -462,5 +462,10 @@
     "p2": "En un mundo saturado de información, elegimos contar historias que importan. Historias que inspiran cambios, que promueven la equidad y que respetan nuestro entorno.",
     "p3": "Nuestro compromiso va más allá de la estética. Buscamos soluciones integrales que consideren el impacto social y ambiental de cada decisión de diseño.",
     "p4": "Juntos, podemos construir un futuro donde las marcas no solo sean rentables, sino también responsables y regenerativas."
+  },
+  "floatingActions": {
+    "whatsappLabel": "Contactar por WhatsApp",
+    "whatsappMessage": "¡Hola! Me gustaría consultar sobre sus servicios.",
+    "scrollTopLabel": "Volver arriba"
   }
 }

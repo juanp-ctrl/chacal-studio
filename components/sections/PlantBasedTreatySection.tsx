@@ -44,8 +44,8 @@ export function PlantBasedTreatySection() {
       id="plant-based-treaty" 
       className="relative py-24 sm:py-32 px-6 lg:px-8 overflow-hidden bg-blue-darker border-t border-white/10"
     >
-      {/* Subtle decorative patterns */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      {/* Subtle decorative patterns - contained within overflow-hidden parent */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
         <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl bg-pbt-green" />
         <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full blur-3xl bg-pbt-green-light" />
       </div>

@@ -462,5 +462,10 @@
     "p2": "In a world saturated with information, we choose to tell stories that matter. Stories that inspire change, promote equity, and respect our environment.",
     "p3": "Our commitment goes beyond aesthetics. We seek comprehensive solutions that consider the social and environmental impact of every design decision.",
     "p4": "Together, we can build a future where brands are not only profitable but also responsible and regenerative."
+  },
+  "floatingActions": {
+    "whatsappLabel": "Contact via WhatsApp",
+    "whatsappMessage": "Hello! I'd like to inquire about your services.",
+    "scrollTopLabel": "Back to top"
   }
 }

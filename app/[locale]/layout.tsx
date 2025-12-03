@@ -6,6 +6,7 @@ import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
 import { CookieBanner } from "@/components/organisms/CookieBanner";
 import { IntroLoader } from "@/components/organisms/IntroLoader";
+import { FloatingActions } from "@/components/organisms/FloatingActions";
 import "../globals.css"; 
 import { Crimson_Text, DM_Sans, Alex_Brush } from "next/font/google";
 
@@ -70,6 +71,7 @@ export default async function LocaleLayout({
           </main>
           
           <Footer />
+          <FloatingActions />
           <CookieBanner />
         </NextIntlClientProvider>
       </body>
