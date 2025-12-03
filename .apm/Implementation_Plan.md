@@ -1,7 +1,7 @@
 # Chacal Estudio Website – Implementation Plan
 
 **Memory Strategy:** Dynamic-MD (directory structure with Markdown logs)
-**Last Modification:** Phase 7 expanded with Tasks 7.4-7.8 (animation, missing sections, ViewTransition, mobile review) - Manager Agent 4
+**Last Modification:** Phase 8 added with UI/UX enhancements (Lighthouse, custom cursor, animations, menu transitions, method cards) - Manager Agent 6
 **Project Overview:** Rebuild the Chacal Estudio website as a high-fidelity Next.js App Router landing, implementing the Figma Make design pixel-close with atomic design, React Compiler, `next-intl` i18n (Spanish + English), strong SEO/JSON-LD, accessibility, legal pages, cookie banner, and a contact form powered by React Hook Form, Zod, Cloudflare Turnstile, and Resend. Deployment via AWS Amplify with Husky-enforced quality gates.
 
 ---
@@ -412,3 +412,75 @@
 3. **Content Review:** Check all sections on mobile for overflow issues, text sizing, spacing, and touch target sizes.
 4. **Form Review:** Verify contact form is usable on mobile with proper input sizing and keyboard handling.
 5. **Document Findings:** Note any issues found and fixes applied.
+
+---
+
+## Phase 8: UI/UX Enhancements
+
+### Task 8.1 – Lighthouse Metrics Optimization │ Agent_Frontend_Architecture
+
+- **Objective:** Analyze current Lighthouse scores and implement optimizations to improve Performance, Accessibility, Best Practices, and SEO metrics.
+- **Output:** Improved Lighthouse scores across all categories; documented optimizations applied; before/after comparison.
+- **Guidance:** Focus on Core Web Vitals (LCP, FID, CLS), image optimization, font loading, and accessibility improvements. User will provide current Lighthouse summary as baseline.
+
+1. **Baseline Analysis:** Review user-provided Lighthouse summary to identify key areas for improvement.
+2. **Performance Optimization:** Address largest contentful paint (LCP), cumulative layout shift (CLS), and total blocking time issues.
+3. **Image Optimization:** Ensure all images use Next.js Image component with proper sizing, lazy loading, and modern formats.
+4. **Font Loading:** Optimize font loading strategy to prevent layout shifts.
+5. **Accessibility Fixes:** Address any accessibility issues identified in Lighthouse audit.
+
+---
+
+### Task 8.2 – Custom Cursor Implementation │ Agent_Frontend_Architecture
+
+- **Objective:** Implement a custom cursor using the white Chacal logo SVG that follows the mouse pointer across the site.
+- **Output:** Custom cursor component that displays the white Chacal logo SVG following the mouse; smooth tracking animation; proper fallback for touch devices.
+- **Guidance:** Use Framer Motion for smooth cursor tracking. Hide on mobile/touch devices. Ensure the cursor doesn't interfere with clickable elements. Consider blend modes or opacity for visibility on different backgrounds.
+
+1. **Create Cursor Component:** Build a custom cursor component using the white Chacal logo SVG with Framer Motion for smooth position tracking.
+2. **Mouse Event Handling:** Track mouse position globally and update cursor position with smooth interpolation.
+3. **Touch Device Detection:** Detect touch devices and disable custom cursor, showing default cursor instead.
+4. **Interactive States:** Add hover states when over interactive elements (scale, color change, or other effect).
+5. **Integration:** Add the custom cursor to the global layout.
+
+---
+
+### Task 8.3 – Hero Section Letter-by-Letter Animation │ Agent_Frontend_Architecture
+
+- **Objective:** Add a letter-by-letter reveal animation to the hero section headline "Comunicando lo humano" for an engaging entry effect.
+- **Output:** Hero headline animates letter-by-letter on page load with staggered timing; smooth and readable animation; respects reduced motion preferences.
+- **Guidance:** Use Framer Motion's stagger children pattern. Split text into individual characters/spans. Consider opacity and y-position animation per character. Add reduced motion media query support.
+
+1. **Text Splitting Utility:** Create a utility or component to split text into individual character spans for animation.
+2. **Stagger Animation:** Implement staggered fade-in/slide-up animation for each character using Framer Motion variants.
+3. **Timing Configuration:** Fine-tune animation duration, stagger delay, and easing for optimal readability.
+4. **Reduced Motion Support:** Add `prefers-reduced-motion` support to disable or simplify animation for accessibility.
+5. **Integration:** Apply the animation to the HeroSection headline component.
+
+---
+
+### Task 8.4 – Mobile Menu Staggered Animation │ Agent_Frontend_Architecture
+
+- **Objective:** Add staggered reveal animation to mobile menu items that animate from right to left on open, and reverse on close.
+- **Output:** Mobile menu items animate individually with stagger effect; right-to-left entrance on open; left-to-right exit on close; smooth and performant.
+- **Guidance:** Use Framer Motion's AnimatePresence and staggerChildren. Each menu item should slide from right (off-screen) to center. Reverse the animation on close with proper exit variants.
+
+1. **Menu Item Animation Variants:** Create Framer Motion variants for menu item enter (right to center) and exit (center to right) animations.
+2. **Stagger Configuration:** Configure staggerChildren on the parent container for sequential item animation.
+3. **Open Animation:** Implement staggered right-to-left reveal when menu opens.
+4. **Close Animation:** Implement staggered left-to-right exit when menu closes (reverse order).
+5. **Performance:** Ensure animations are GPU-accelerated and don't cause jank.
+
+---
+
+### Task 8.5 – Method Section Card Styling Update │ Agent_Frontend_Architecture
+
+- **Objective:** Update the Method section cards to use the primary brand color background with white text for better visual consistency.
+- **Output:** Method section cards have primary color (`#2F2E59`) background; all text is white; icons and other elements adjusted for visibility on dark background.
+- **Guidance:** Update MethodSection component styles. Ensure proper contrast for accessibility. Adjust hover states to work with new color scheme.
+
+1. **Card Background Update:** Change method card background from current styling to primary brand color (`bg-primary`).
+2. **Text Color Update:** Update all text within cards to white for proper contrast.
+3. **Icon Styling:** Adjust icon colors and backgrounds to work with the dark card background.
+4. **Hover States:** Update hover effects to provide visual feedback on the primary background.
+5. **Accessibility Check:** Verify color contrast meets WCAG standards for the new color scheme.
