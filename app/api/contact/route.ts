@@ -28,9 +28,14 @@ export async function POST(req: NextRequest) {
     }
 
     const turnstileVerifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-    const turnstileFormData = new FormData();
+    
+    const ip = req.headers.get("x-forwarded-for");
+    const turnstileFormData = new URLSearchParams();
     turnstileFormData.append("secret", turnstileSecret);
     turnstileFormData.append("response", turnstileToken);
+    if (ip) {
+      turnstileFormData.append("remoteip", ip);
+    }
 
     const turnstileResponse = await fetch(turnstileVerifyUrl, {
       method: "POST",
@@ -42,7 +47,11 @@ export async function POST(req: NextRequest) {
     if (!turnstileResult.success) {
       console.error("Turnstile verification failed:", turnstileResult);
       return NextResponse.json(
-        { success: false, error: "Turnstile verification failed" },
+        { 
+          success: false, 
+          error: "Turnstile verification failed",
+          details: turnstileResult 
+        },
         { status: 400 }
       );
     }
@@ -73,7 +82,8 @@ export async function POST(req: NextRequest) {
 
     try {
       const emailResponse = await resend.emails.send({
-        from: "Chacal Studio Contact <contact@contact.chacalestudio.ar>",
+        // TODO: Update 'from' to "Chacal Studio Contact <info@contact.chacalestudio.ar>" once domain verification is complete
+        from: "Chacal Studio Contact <onboarding@resend.dev>",
         to: ["hola@chacalestudio.ar", "cuentas@chacalestudio.ar"],
         replyTo: email,
         subject: `¡Nuevo mensaje de contacto de ${name}!`,
@@ -108,7 +118,7 @@ export async function POST(req: NextRequest) {
       if (emailResponse.error) {
         console.error("Resend error:", emailResponse.error);
         return NextResponse.json(
-          { success: false, error: "Failed to send email" },
+          { success: false, error: emailResponse.error.message || "Failed to send email", details: emailResponse.error },
           { status: 500 }
         );
       }
@@ -117,7 +127,11 @@ export async function POST(req: NextRequest) {
     } catch (emailError) {
       console.error("Email sending error:", emailError);
       return NextResponse.json(
-        { success: false, error: "Failed to send email" },
+        { 
+          success: false, 
+          error: emailError instanceof Error ? emailError.message : "Failed to send email", 
+          details: emailError 
+        },
         { status: 500 }
       );
     }

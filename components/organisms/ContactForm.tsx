@@ -57,6 +57,7 @@ export function ContactForm() {
       const result = await response.json();
 
       if (!response.ok) {
+        console.error("Server error details:", result);
         throw new Error(result.error || "Submission failed");
       }
 
